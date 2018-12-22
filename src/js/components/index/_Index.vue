@@ -1,9 +1,10 @@
 <template>
 	<div id="hello">
-		<select name="region">
-			<option>Tokyo</option>
-			<option>London</option>
-			<option>New York</option>
+		<select name="region" v-model="region">
+			<option value="-1">select Region</option>
+			<option value="en">London</option>
+			<option value="us">New York</option>
+			<option value="ja">Tokyo</option>
 		</select>
 	</div>
 </template>
@@ -21,7 +22,13 @@
 					datetime: {}
 				}
 			}
-		}
+		},
+		computed: {
+			...mapState([
+				'region',
+				'datetime'
+			]),
+		},
 	};
 
 </script>
