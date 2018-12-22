@@ -1,5 +1,5 @@
 <template>
-	<div id="hello">
+	<div id="view">
 		<select name="region" v-model="region">
 			<option value="-1">select Region</option>
 			<option value="en">London</option>
@@ -32,3 +32,11 @@
 	};
 
 </script>
+
+<style lang="scss">
+	#view {
+		background-color: #000;
+		height: 100%;
+	}
+
+</style>
