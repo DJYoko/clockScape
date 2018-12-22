@@ -6,15 +6,21 @@
 			<option value="us">New York</option>
 			<option value="ja">Tokyo</option>
 		</select>
+		<analog-watch :datetime="datetime"></analog-watch>
 	</div>
+
 </template>
 
 <script>
+	import analogWatch from '../analog_watch/';
 	import {
 		mapState
 	} from 'vuex';
 
 	export default {
+		components: {
+			analogWatch,
+		},
 		data() {
 			return {
 				changed: {
@@ -28,6 +34,10 @@
 				'region',
 				'datetime'
 			]),
+		},
+		created() {
+			this.changed.region = this.region;
+			this.changed.datetime = this.datetime;
 		},
 	};
 
