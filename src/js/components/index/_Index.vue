@@ -23,9 +23,9 @@
 		},
 		data() {
 			return {
-				changed: {
+				current: {
 					region: '',
-					datetime: {}
+					datetime: this.currentDatetime,
 				}
 			}
 		},
@@ -34,10 +34,14 @@
 				'region',
 				'datetime'
 			]),
+			currentDatetime() {
+				return new Date();
+			},
 		},
-		created() {
-			this.changed.region = this.region;
-			this.changed.datetime = this.datetime;
+		mounted() {
+			setInterval(() => {
+				this.$store.dispatch('updateTime', new Date());
+			}, 1000);
 		},
 	};
 
