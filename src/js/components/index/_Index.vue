@@ -7,12 +7,14 @@
 			<option value="ja">Tokyo</option>
 		</select>
 		<analog-clock :datetime="datetime" style="margin: 40px auto;"></analog-clock>
+		<digital-clock :datetime="datetime" style="margin: 40px auto;"></digital-clock>
 	</div>
 
 </template>
 
 <script>
 	import analogClock from '../analogClock/';
+	import digitalClock from '../digitalClock/';
 	import {
 		mapState
 	} from 'vuex';
@@ -20,6 +22,7 @@
 	export default {
 		components: {
 			analogClock,
+			digitalClock,
 		},
 		data() {
 			return {
