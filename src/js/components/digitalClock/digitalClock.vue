@@ -1,26 +1,24 @@
 <template>
 	<div class="digital_clock">
-		<!--
-<clock-number :value="0"></clock-number>
-<clock-number :value="0"></clock-number>
-<clock-colon></clock-colon>
-<clock-number :value="0"></clock-number>
-<clock-number :value="0"></clock-number>
-<clock-colon></clock-colon>
-<clock-number :value="0"></clock-number>
-<clock-number :value="0"></clock-number>
--->
+		<clock-number :value="Number(yymmdd[0])"></clock-number>
+		<clock-number :value="Number(yymmdd[1])"></clock-number>
+		<clock-colon></clock-colon>
+		<clock-number :value="Number(yymmdd[2])"></clock-number>
+		<clock-number :value="Number(yymmdd[3])"></clock-number>
+		<clock-colon></clock-colon>
+		<clock-number :value="Number(yymmdd[4])"></clock-number>
+		<clock-number :value="Number(yymmdd[5])"></clock-number>
 	</div>
 </template>
 
 <script>
-	//	import clockNumber from './number';
-	// import clockColon from './colon';
+	import clockNumber from './clockNumber';
+	import clockColon from './clockColon';
 	export default {
 		name: 'digitalClock',
 		components: {
-			//			clockNumber,
-			// clockHand,
+			clockNumber,
+			clockColon,
 		},
 		props: {
 			datetime: {
@@ -29,15 +27,19 @@
 			}
 		},
 		computed: {
-			datetimeObject() {
+			yymmdd() {
 				const _datetime = new Date(this.datetime);
-				return {
-					hour: _datetime.getHours(),
-					minute: _datetime.getMinutes(),
-					second: _datetime.getSeconds(),
-				};
-			},
+				const hour_string = this.zeroPadding(_datetime.getHours(), 2);
+				const minute_string = this.zeroPadding(_datetime.getMinutes(), 2);
+				const second_string = this.zeroPadding(_datetime.getSeconds(), 2);
+				return hour_string + minute_string + second_string;
+			}
 		},
+		methods: {
+			zeroPadding(number, length) {
+				return (Array(length).join('0') + number).slice(-length);
+			},
+		}
 	};
 
 </script>

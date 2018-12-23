@@ -21,21 +21,16 @@ module.exports = {
 				test: /\.js$/,
 				loader: 'babel-loader',
       },
-			// Sassファイルの読み込みとコンパイル
 			{
-				test: /\.scss/, // 対象となるファイルの拡張子
+				test: /\.scss/,
+				include: path.resolve(__dirname, './img/'),
 				use: [
-          // linkタグに出力する機能
-          'style-loader',
-          // CSSをバンドルするための機能
+                    'style-loader',
 					{
 						loader: 'css-loader',
 						options: {
-							// オプションでCSS内のurl()メソッドの取り込みを禁止する
 							url: false,
-							// ソースマップの利用有無
 							sourceMap: enabledSourceMap,
-
 							// 0 => no loaders (default);
 							// 1 => postcss-loader;
 							// 2 => postcss-loader, sass-loader
@@ -45,7 +40,6 @@ module.exports = {
 					{
 						loader: 'sass-loader',
 						options: {
-							// ソースマップの利用有無
 							sourceMap: enabledSourceMap,
 						}
           }
@@ -53,8 +47,17 @@ module.exports = {
       },
 			{
 				test: /\.css$/,
-				use: ['style-loader', 'css-loader']
+				use: ['style-loader', 'css-loader'],
+				include: path.resolve(__dirname, './assets/css/'),
+
       },
+			{
+				test: /\.png$/,
+				use: 'file-loader',
+				query: {
+					name: 'img/[name].[ext]'
+				}
+    },
     ]
 	},
 	resolve: {
