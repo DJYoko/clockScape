@@ -5,26 +5,39 @@
 			</watch-marker>
 		</div>
 		<div class="hands_container">
-			<div class="hand hour"></div>
-			<div class="hand minute"></div>
-			<div class="hand second"></div>
+			<watch-hand hand-type="hour" :value="datetimeObject.hour"></watch-hand>
+			<watch-hand hand-type="minute" :value="datetimeObject.minute"></watch-hand>
+			<watch-hand hand-type="second" :value="datetimeObject.second"></watch-hand>
+
 		</div>
 	</div>
 </template>
 
 <script>
 	import watchMarker from './watch_marker';
+	import watchHand from './hand';
 	export default {
 		name: 'analogWatch',
 		components: {
 			watchMarker,
+			watchHand,
 		},
 		props: {
 			datetime: {
 				type: Date,
 				required: true,
 			}
-		}
+		},
+		computed: {
+			datetimeObject() {
+				const _datetime = new Date(this.datetime);
+				return {
+					hour: _datetime.getHours(),
+					minute: _datetime.getMinutes(),
+					second: _datetime.getSeconds(),
+				};
+			},
+		},
 	};
 
 </script>
