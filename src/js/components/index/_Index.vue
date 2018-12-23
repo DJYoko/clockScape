@@ -12,7 +12,7 @@
 </template>
 
 <script>
-	import analogWatch from '../analog_watch/';
+	import analogWatch from '../analogWatch/';
 	import {
 		mapState
 	} from 'vuex';
