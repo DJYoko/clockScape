@@ -1,25 +1,25 @@
 <template>
-	<div class="analog_watch">
+	<div class="analog_clock">
 		<div class="background_display">
 			<panel-mark v-for="(item, index) in 30" :key="index" :index="index" class="panel_mark">
 			</panel-mark>
 		</div>
 		<div class="hands_container">
-			<watch-hand hand-type="hour" :value="datetimeObject.hour"></watch-hand>
-			<watch-hand hand-type="minute" :value="datetimeObject.minute"></watch-hand>
-			<watch-hand hand-type="second" :value="datetimeObject.second"></watch-hand>
+			<clock-hand hand-type="hour" :value="datetimeObject.hour"></clock-hand>
+			<clock-hand hand-type="minute" :value="datetimeObject.minute"></clock-hand>
+			<clock-hand hand-type="second" :value="datetimeObject.second"></clock-hand>
 		</div>
 	</div>
 </template>
 
 <script>
 	import panelMark from './panelMark';
-	import watchHand from './hand';
+	import clockHand from './hand';
 	export default {
-		name: 'analogWatch',
+		name: 'analogClock',
 		components: {
 			panelMark,
-			watchHand,
+			clockHand,
 		},
 		props: {
 			datetime: {
@@ -42,7 +42,7 @@
 </script>
 
 <style>
-	.analog_watch {
+	.analog_clock {
 		width: 300px;
 		height: 300px;
 		position: relative;

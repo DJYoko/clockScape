@@ -6,20 +6,20 @@
 			<option value="us">New York</option>
 			<option value="ja">Tokyo</option>
 		</select>
-		<analog-watch :datetime="datetime" style="margin: 40px auto;"></analog-watch>
+		<analog-clock :datetime="datetime" style="margin: 40px auto;"></analog-clock>
 	</div>
 
 </template>
 
 <script>
-	import analogWatch from '../analogWatch/';
+	import analogClock from '../analogClock/';
 	import {
 		mapState
 	} from 'vuex';
 
 	export default {
 		components: {
-			analogWatch,
+			analogClock,
 		},
 		data() {
 			return {
