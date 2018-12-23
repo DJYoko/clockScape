@@ -21,7 +21,7 @@
 		},
 		props: {
 			datetime: {
-				type: String,
+				type: Date,
 				required: true,
 			}
 		}

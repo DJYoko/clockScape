@@ -6,6 +6,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		region: 'ja',
-		datetime: new Date().toISOString(),
+		datetime: new Date(),
 	}
 });
