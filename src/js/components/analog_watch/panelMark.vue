@@ -1,10 +1,10 @@
 <template>
-	<div class="watch_marker" :style="markerStyle" :class="markerClass"></div>
+	<div class="panel_mark" :style="markStyle" :class="markClass"></div>
 </template>
 
 <script>
 	export default {
-		name: 'watchMarker',
+		name: 'panelMark',
 		props: {
 			index: {
 				type: Number,
@@ -12,12 +12,12 @@
 			}
 		},
 		computed: {
-			markerClass() {
+			markClass() {
 				return {
 					bold: this.index % 15 === 0,
 				}
 			},
-			markerStyle() {
+			markStyle() {
 				return {
 					transform: 'rotateZ(' + this.index * 6 + 'deg)',
 				}
@@ -27,7 +27,7 @@
 
 </script>
 <style>
-	.watch_marker {
+	.panel_mark {
 		width: 100%;
 		height: 1px;
 		border: 2px solid #fff;

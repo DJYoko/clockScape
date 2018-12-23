@@ -1,8 +1,8 @@
 <template>
 	<div class="analog_watch">
 		<div class="background_display">
-			<watch-marker v-for="(item, index) in 30" :key="index" :index="index" class="watch_marker">
-			</watch-marker>
+			<panel-mark v-for="(item, index) in 30" :key="index" :index="index" class="panel_mark">
+			</panel-mark>
 		</div>
 		<div class="hands_container">
 			<watch-hand hand-type="hour" :value="datetimeObject.hour"></watch-hand>
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-	import watchMarker from './watch_marker';
+	import panelMark from './panelMark';
 	import watchHand from './hand';
 	export default {
 		name: 'analogWatch',
 		components: {
-			watchMarker,
+			panelMark,
 			watchHand,
 		},
 		props: {
