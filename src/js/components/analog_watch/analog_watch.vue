@@ -8,7 +8,6 @@
 			<watch-hand hand-type="hour" :value="datetimeObject.hour"></watch-hand>
 			<watch-hand hand-type="minute" :value="datetimeObject.minute"></watch-hand>
 			<watch-hand hand-type="second" :value="datetimeObject.second"></watch-hand>
-
 		</div>
 	</div>
 </template>
