@@ -30,7 +30,7 @@
 			},
 			handStyle() {
 				return {
-					transform: 'rotateZ(' + this.index * 6 + 'deg)',
+					transform: 'rotateZ(' + this.value * 6 + 'deg)',
 				}
 			},
 		}
@@ -41,12 +41,11 @@
 	.hand {
 		height: 50%;
 		width: 1px;
-		border: 2px solid #fff;
-		border-left: none;
-		border-right: none;
+		background: #fff;
 		position: absolute;
 		top: 0%;
 		left: 50%;
+		transform-origin: bottom;
 	}
 
 </style>
