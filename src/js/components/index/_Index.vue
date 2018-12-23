@@ -6,7 +6,7 @@
 			<option value="us">New York</option>
 			<option value="ja">Tokyo</option>
 		</select>
-		<analog-watch :datetime="datetime"></analog-watch>
+		<analog-watch :datetime="datetime" style="margin: 40px auto;"></analog-watch>
 	</div>
 
 </template>
@@ -47,6 +47,7 @@
 	#view {
 		background-color: #000;
 		height: 100%;
+		text-align: center;
 	}
 
 </style>
