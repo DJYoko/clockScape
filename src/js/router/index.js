@@ -11,7 +11,8 @@ const router = new VueRouter({
 		{
 			path: web_root_uri,
 			name: 'index',
-			component: Index
+			component: Index,
+			alias: web_root_uri + 'index.html',
 		},
     ],
 });
