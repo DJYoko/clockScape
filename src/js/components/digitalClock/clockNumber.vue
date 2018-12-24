@@ -1,6 +1,5 @@
 <template>
 	<div class="clock_number" :style="numberStyle">
-		{{ value }}
 	</div>
 </template>
 
