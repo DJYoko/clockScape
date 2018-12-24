@@ -1,5 +1,5 @@
 <template>
-	<div class="clock_number">
+	<div class="clock_number" :style="numberStyle">
 		{{ value }}
 	</div>
 </template>
@@ -13,15 +13,25 @@
 				required: true,
 			}
 		},
+		computed: {
+			numberStyle() {
+				const style = {
+					backgroundPosition: this.value * 10 + '%' + ' 50%',
+				};
+				return style;
+			},
+		}
 	};
 
 </script>
 
-<style>
-	.digital_clock {
-		width: 300px;
-		height: 100px;
-		position: relative;
+<style lang="scss">
+	.clock_number {
+		width: 33px;
+		height: 52px;
+		background-image: url("img/digital_number.png");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
 	}
 
 </style>

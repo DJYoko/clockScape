@@ -9,11 +9,14 @@
 
 </script>
 
-<style>
+<style lang="scss">
 	.clock_colon {
-		width: 300px;
-		height: 100px;
-		position: relative;
+		width: 33px;
+		height: 52px;
+		background-image: url("img/digital_number.png");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 100% 50%;
 	}
 
 </style>

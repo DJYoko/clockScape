@@ -1,13 +1,13 @@
 <template>
 	<div class="digital_clock">
-		<clock-number :value="Number(yymmdd[0])"></clock-number>
-		<clock-number :value="Number(yymmdd[1])"></clock-number>
-		<clock-colon></clock-colon>
-		<clock-number :value="Number(yymmdd[2])"></clock-number>
-		<clock-number :value="Number(yymmdd[3])"></clock-number>
-		<clock-colon></clock-colon>
-		<clock-number :value="Number(yymmdd[4])"></clock-number>
-		<clock-number :value="Number(yymmdd[5])"></clock-number>
+		<clock-number class="clock_element" :value="Number(yymmdd[0])"></clock-number>
+		<clock-number class="clock_element" :value="Number(yymmdd[1])"></clock-number>
+		<clock-colon class="clock_element"></clock-colon>
+		<clock-number class="clock_element" :value="Number(yymmdd[2])"></clock-number>
+		<clock-number class="clock_element" :value="Number(yymmdd[3])"></clock-number>
+		<clock-colon class="clock_element"></clock-colon>
+		<clock-number class="clock_element" :value="Number(yymmdd[4])"></clock-number>
+		<clock-number class="clock_element" :value="Number(yymmdd[5])"></clock-number>
 	</div>
 </template>
 
@@ -49,6 +49,11 @@
 		width: 300px;
 		height: 100px;
 		position: relative;
+	}
+
+	.clock_element {
+		display: inline-block;
+		vertical-align: bottom;
 	}
 
 </style>
