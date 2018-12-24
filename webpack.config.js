@@ -23,7 +23,6 @@ module.exports = {
       },
 			{
 				test: /\.scss/,
-				include: path.resolve(__dirname, './img/'),
 				use: [
                     'style-loader',
 					{
@@ -48,14 +47,13 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],
-				include: path.resolve(__dirname, './assets/css/'),
 
       },
 			{
 				test: /\.png$/,
-				use: 'file-loader',
+				loader: 'file-loader',
 				query: {
-					name: 'img/[name].[ext]'
+					name: '[name].[ext]'
 				}
     },
     ]
