@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		region: 'ja',
+		region: 'Tokyo',
 		datetime: new Date(),
 	},
 	mutations: {

@@ -1,18 +1,16 @@
 <template>
 	<div id="view">
 		<select name="region" v-model="region">
-			<option value="-1">select Region</option>
-			<option value="en">London</option>
-			<option value="us">New York</option>
-			<option value="ja">Tokyo</option>
+			<option value="-1" disabled>select Region</option>
+			<option v-for="(region, index) in regions" :key="index" :value="index">{{region.label}}</option>
 		</select>
 		<analog-clock :datetime="datetime" style="margin: 40px auto;"></analog-clock>
 		<digital-clock :datetime="datetime" style="margin: 40px auto;"></digital-clock>
 	</div>
 
 </template>
-
 <script>
+	import CONSTANTS from '../../utils/constants';
 	import analogClock from '../analogClock/';
 	import digitalClock from '../digitalClock/';
 	import {
@@ -29,7 +27,8 @@
 				current: {
 					region: '',
 					datetime: this.currentDatetime,
-				}
+				},
+				regions: CONSTANTS.REGIONS,
 			}
 		},
 		computed: {
