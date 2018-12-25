@@ -40,6 +40,9 @@
 				return new Date();
 			},
 		},
+		created() {
+			this.$store.dispatch('loadServerTime');
+		},
 		mounted() {
 			setInterval(() => {
 				this.$store.dispatch('updateTime', new Date());
