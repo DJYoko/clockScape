@@ -4,8 +4,8 @@
 			<option value="-1" disabled>select Region</option>
 			<option v-for="(region, index) in regions" :key="index" :value="index">{{region.label}}</option>
 		</select>
-		<analog-clock :datetime="datetime" style="margin: 40px auto;"></analog-clock>
-		<digital-clock :datetime="datetime" style="margin: 40px auto;"></digital-clock>
+		<analog-clock :datetime="this.utod(currentUnixtime)" style="margin: 40px auto;"></analog-clock>
+		<digital-clock :datetime="this.utod(currentUnixtime)" style="margin: 40px auto;"></digital-clock>
 	</div>
 
 </template>
@@ -22,10 +22,6 @@
 		},
 		data() {
 			return {
-				current: {
-					region: '',
-					datetime: new Date(),
-				},
 				regions: CONSTANTS.REGIONS,
 			}
 		},
@@ -39,8 +35,21 @@
 			]),
 		},
 		created() {
-			this.$store.dispatch('loadServerTime');
+			const payload = {};
+			payload.callback = ()=> {
+				console.log('callback');
+				setInterval(()=> {
+					this.$store.dispatch('updateTime');
+				}, 1000);
+			};
+			this.$store.dispatch('loadServerTime', payload);
+			
 		},
+		methods: {
+		   utod (unixtime) {
+			  return new Date(unixtime);
+		   }
+		}
 	};
 
 </script>
