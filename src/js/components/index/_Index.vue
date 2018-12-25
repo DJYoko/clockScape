@@ -13,9 +13,7 @@
 	import CONSTANTS from '../../utils/constants';
 	import analogClock from '../analogClock/';
 	import digitalClock from '../digitalClock/';
-	import {
-		mapState
-	} from 'vuex';
+	import {mapState} from 'vuex';
 
 	export default {
 		components: {
@@ -26,7 +24,7 @@
 			return {
 				current: {
 					region: '',
-					datetime: this.currentDatetime,
+					datetime: new Date(),
 				},
 				regions: CONSTANTS.REGIONS,
 			}
@@ -34,19 +32,14 @@
 		computed: {
 			...mapState([
 				'region',
-				'datetime'
+				'datetime',
+				'currentUnixtime',
+				'initServerUnixtime',
+				'initDeviceUnixTime',
 			]),
-			currentDatetime() {
-				return new Date();
-			},
 		},
 		created() {
 			this.$store.dispatch('loadServerTime');
-		},
-		mounted() {
-			setInterval(() => {
-				this.$store.dispatch('updateTime', new Date());
-			}, 1000);
 		},
 	};
 
