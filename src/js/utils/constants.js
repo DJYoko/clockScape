@@ -1,15 +1,15 @@
 const REGIONS = {
 	London: {
 		label: 'London',
-		timeLag: 0,
+		offset: 0,
 	},
 	Tokyo: {
 		label: 'Tokyo',
-		timeLag: 0,
+		offset: 32400,
 	},
 	NewYork: {
 		label: 'New York',
-		timeLag: 0,
+		offset: -18000,
 	},
 }
 
