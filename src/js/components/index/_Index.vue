@@ -37,7 +37,6 @@
 		created() {
 			const payload = {};
 			payload.callback = ()=> {
-				console.log('callback');
 				setInterval(()=> {
 					this.$store.dispatch('updateTime');
 				}, 1000);
