@@ -1,6 +1,7 @@
 <template>
 	<div id="view">
 		<region-selector :region="region" @change="onRegionChange"></region-selector>
+	<div id="view" :style="viewStyle">
 		<clocks :unixtime="currentUnixtime" :region="region"></clocks>
 	</div>
 
@@ -26,6 +27,13 @@
 				'region',
 				'currentUnixtime',
 			]),
+			viewStyle() {
+				const style = {
+					padding: '10px',
+					backgroundImage: 'url(img/region/' + this.region+ '.jpg)',
+				};
+				return style;
+			}
 		},
 		created() {
 			const payload = {};
@@ -51,6 +59,8 @@
 		background-color: #000;
 		height: 100%;
 		text-align: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 </style>
