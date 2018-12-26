@@ -1,6 +1,6 @@
 <template>
 	<div id="view" :style="viewStyle">
-		
+		<p class="text-right info-link"><span class="glyphicon glyphicon-info-sign"></span></p>
 		<div class="blackbox">
 			<div class="region_selector_wrapper">
 				<region-selector :region="region" @change="onRegionChange"></region-selector>
@@ -84,4 +84,20 @@
 		margin-bottom: 20px;
 	}
 
+	
+	
+	.info-link {
+		
+		.glyphicon {
+			cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    font-size: 16px;
+    padding: 4px 4px 2px;
+    border-radius: 16px;
+    color: #262626;
+			&:hover{
+				opacity: 0.75;
+			}
+		}
+	}
 </style>
