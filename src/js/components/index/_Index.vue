@@ -1,6 +1,8 @@
 <template>
 	<div id="view" :style="viewStyle">
-		<p class="text-right info-link"><span class="glyphicon glyphicon-info-sign"></span></p>
+		<p class="text-right info-link">
+			<span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></span>
+		</p>
 		<div class="blackbox">
 			<div class="region_selector_wrapper">
 				<region-selector :region="region" @change="onRegionChange"></region-selector>

@@ -23,6 +23,36 @@
 		<!-- access URL: /bitbucket/clocks/dst/-->
 		<router-view></router-view>
 	</div>
+	<div id="info_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">info</h4>
+      </div>
+      <div class="modal-body">
+        <h5>technology &amp; material</h5>
+		  <ul style="padding-left:20px;">
+		  	<li>Vue,Vuex</li>
+		  	<li>time zone &amp; offset <a href="https://www.epochconverter.com/timezones" target="_blank">https://www.epochconverter.com/timezones</a></li>
+			  <li>Photo: <a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+			  <li>bootstrap: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a></li>
+		  </ul>
+		  <hr>
+		  <h5>source</h5>
+		  <ul style="padding-left:20px;">
+		  	<li>bitbucket <a href="https://bitbucket.org/djyoko/clockscape/src" target="_blank">https://bitbucket.org/djyoko/clockscape/src</a></li>
+		  </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </body>
 <script src="./js/clocks.js"></script>
 <style>
