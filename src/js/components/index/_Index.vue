@@ -5,6 +5,7 @@
 			<option v-for="(region, index) in regions" :key="index" :value="index">{{region.label}}</option>
 		</select>
 		<clocks :unixtime="currentUnixtime"></clocks>
+		<clocks :unixtime="currentUnixtime" :region="region"></clocks>
 	</div>
 
 </template>

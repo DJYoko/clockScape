@@ -6,6 +6,7 @@
 </template>
 
 <script>
+	import CONSTANTS from '../../utils/constants';
 	import analogClock from '../analogClock/';
 	import digitalClock from '../digitalClock/';
 	export default {
@@ -19,10 +20,17 @@
 				type: Number,
 				required: true,
 			},
+			region: {
+				type: String,
+				required: true,
+			},
 		},
 		computed: {
 			datetime(){
-				return new Date(this.unixtime);
+				const deviceTimezoneOffset = 60 * (new Date()).getTimezoneOffset(); // second
+				const selectedRegionTimezoneOffset = CONSTANTS.REGIONS[this.region].offset; //second
+				const selectedRegionLocaltime = this.unixtime + (deviceTimezoneOffset + selectedRegionTimezoneOffset) * 1000; // milli second
+				return new Date(selectedRegionLocaltime);
 			},
 		}
 	};
