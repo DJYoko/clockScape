@@ -14,6 +14,16 @@ const REGIONS = {
 		offset: -18000,
 		photoLink: 'https://unsplash.com/photos/UnI8AGe1634',
 	},
+		Shanghai: {
+		label: 'Shanghai',
+		offset: 28800,
+		photoLink: 'https://unsplash.com/photos/uKyzXEc2k_s',
+	},
+		Moscow: {
+		label: 'Moscow',
+		offset: 10800,
+		photoLink: 'https://unsplash.com/photos/jaH3QF46gAY',
+	},
 }
 
 export default {
