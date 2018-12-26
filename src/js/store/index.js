@@ -3,13 +3,17 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+// data for pre-loading. 
+const defaultDate = new Date();
+const defaultUnixtime = defaultDate.getTime();
+
 export default new Vuex.Store({
 	state: {
 		region: 'Tokyo',
-		datetime: 0,
-		currentUnixtime: 0,
-		initServerUnixtime: 0,
-		initDeviceUnixTime: 0,
+		datetime: defaultUnixtime,
+		currentUnixtime: defaultUnixtime,
+		initServerUnixtime: defaultUnixtime,
+		initDeviceUnixTime: defaultUnixtime,
 	},
 	mutations: {
 		loadServerTime: (state, payload) => {
