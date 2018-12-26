@@ -1,18 +1,23 @@
 import Vue from 'vue';
 import Index from '../components/index';
 import VueRouter from 'vue-router';
+import CONSTANTS from '../utils/constants';
 
 Vue.use(VueRouter);
-const web_root_uri = '/bitbucket/clockscape/dst/';
 
 const router = new VueRouter({
 	mode: 'history',
 	routes: [
 		{
-			path: web_root_uri,
+			path: CONSTANTS.WEB_ROOT,
 			name: 'index',
 			component: Index,
-			alias: web_root_uri + 'index.html',
+			alias: CONSTANTS.WEB_ROOT + 'index.html',
+		},
+		{
+			path: CONSTANTS.WEB_ROOT + ':region',
+			name: 'region',
+			component: Index,
 		},
     ],
 });

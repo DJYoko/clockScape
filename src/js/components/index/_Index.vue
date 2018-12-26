@@ -17,7 +17,9 @@
 	import clocks from '../clocks/';
 	import regionSelector from '../regionSelector/';
 	import photoInfo from '../photoInfo/';
-	import {mapState} from 'vuex';
+	import {
+		mapState
+	} from 'vuex';
 
 	export default {
 		components: {
@@ -38,20 +40,24 @@
 			viewStyle() {
 				const style = {
 					padding: '10px',
-					backgroundImage: 'url(img/region/' + this.region+ '.jpg)',
+					backgroundImage: 'url(img/region/' + this.region + '.jpg)',
 				};
 				return style;
 			}
 		},
 		created() {
 			const payload = {};
-			payload.callback = ()=> {
-				setInterval(()=> {
+			const init_region = (this.$route.params.region) ? this.$route.params.region : 'Tokyo';
+			this.$store.dispatch('selectRegion', {
+				region: init_region
+			});
+			payload.callback = () => {
+				setInterval(() => {
 					this.$store.dispatch('updateTime');
 				}, 1000);
 			};
 			this.$store.dispatch('loadServerTime', payload);
-			
+
 		},
 		methods: {
 			onRegionChange(payload) {
@@ -86,20 +92,22 @@
 		margin-bottom: 20px;
 	}
 
-	
-	
+
+
 	.info-link {
-		
+
 		.glyphicon {
 			cursor: pointer;
-    background: rgba(255,255,255,0.5);
-    font-size: 16px;
-    padding: 4px 4px 2px;
-    border-radius: 16px;
-    color: #262626;
-			&:hover{
+			background: rgba(255, 255, 255, 0.5);
+			font-size: 16px;
+			padding: 4px 4px 2px;
+			border-radius: 16px;
+			color: #262626;
+
+			&:hover {
 				opacity: 0.75;
 			}
 		}
 	}
+
 </style>

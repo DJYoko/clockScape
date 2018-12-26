@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import router from '../router/';
+import CONSTANTS from '../utils/constants';
 
 Vue.use(Vuex);
 
@@ -21,28 +23,29 @@ export default new Vuex.Store({
 				url: 'https://ntp-a1.nict.go.jp/cgi-bin/json',
 				method: 'GET',
 			});
-			
+
 			promise.done((data) => {
 				state.initServerUnixtime = data.st * 1000;
 			});
-			
+
 			promise.fail((error) => {
 				const nd = new Date();
 				state.initServerUnixtime = nd.getTime();
 			});
-			
+
 			promise.then(() => {
 				const nd = new Date();
 				state.initDeviceUnixTime = nd.getTime();
 				payload.callback();
 			});
 		},
-		updateTime: (state) =>{
-			const _nd = new Date();						
+		updateTime: (state) => {
+			const _nd = new Date();
 			state.currentUnixtime = _nd.getTime() - state.initDeviceUnixTime + state.initServerUnixtime;
 		},
-		selectRegion: (state, payload) =>{
+		selectRegion: (state, payload) => {
 			state.region = payload.region;
+			router.push(CONSTANTS.WEB_ROOT + payload.region);
 		},
 	},
 	actions: {
