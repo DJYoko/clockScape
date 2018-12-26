@@ -35,3 +35,15 @@
 	};
 
 </script>
+
+<style lang="scss">
+	select {
+		background: none;
+		color: #fff;
+		border:none;
+		border-bottom: 1px solid #ffffff;
+	}
+	option {
+		color: #262626;
+	}
+</style>

@@ -47,7 +47,7 @@
 <style>
 	.digital_clock {
 		width: 300px;
-		height: 100px;
+		margin: 0 auto;
 		position: relative;
 	}
 

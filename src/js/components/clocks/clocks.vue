@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<analog-clock :datetime="datetime" style="margin: 40px auto;"></analog-clock>
-		<digital-clock :datetime="datetime" style="margin: 40px auto;"></digital-clock>
+	<div id="clocks_wrapper">
+		<analog-clock :datetime="datetime" style="margin: 0 auto 20px;"></analog-clock>
+		<digital-clock :datetime="datetime"></digital-clock>
 	</div>
 </template>
 

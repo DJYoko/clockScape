@@ -1,8 +1,11 @@
 <template>
-	<div id="view">
-		<region-selector :region="region" @change="onRegionChange"></region-selector>
 	<div id="view" :style="viewStyle">
-		<clocks :unixtime="currentUnixtime" :region="region"></clocks>
+		<div class="blackbox">
+			<div class="region_selector_wrapper">
+				<region-selector :region="region" @change="onRegionChange"></region-selector>
+			</div>
+			<clocks :unixtime="currentUnixtime" :region="region"></clocks>
+		</div>
 	</div>
 
 </template>
@@ -61,6 +64,21 @@
 		text-align: center;
 		background-size: cover;
 		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.blackbox {
+		width: 320px;
+		margin: 0 auto;
+		padding: 20px 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 4px;
+	}
+
+	.region_selector_wrapper {
+		text-align: right;
+		padding-right: 20px;
+		margin-bottom: 20px;
 	}
 
 </style>
