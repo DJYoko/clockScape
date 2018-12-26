@@ -1,24 +1,27 @@
 <template>
 	<div id="view" :style="viewStyle">
+		
 		<div class="blackbox">
 			<div class="region_selector_wrapper">
 				<region-selector :region="region" @change="onRegionChange"></region-selector>
 			</div>
 			<clocks :unixtime="currentUnixtime" :region="region"></clocks>
 		</div>
+		<photo-info :region="region"></photo-info>
 	</div>
-
 </template>
 <script>
 	import CONSTANTS from '../../utils/constants';
 	import clocks from '../clocks/';
 	import regionSelector from '../regionSelector/';
+	import photoInfo from '../photoInfo/';
 	import {mapState} from 'vuex';
 
 	export default {
 		components: {
 			clocks,
 			regionSelector,
+			photoInfo,
 		},
 		data() {
 			return {
@@ -69,7 +72,7 @@
 
 	.blackbox {
 		width: 320px;
-		margin: 0 auto;
+		margin: 0 0 0 auto;
 		padding: 20px 0;
 		background-color: rgba(0, 0, 0, 0.5);
 		border-radius: 4px;
