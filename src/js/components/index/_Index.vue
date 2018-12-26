@@ -1,10 +1,6 @@
 <template>
 	<div id="view">
-		<select name="region" v-model="region">
-			<option value="-1" disabled>select Region</option>
-			<option v-for="(region, index) in regions" :key="index" :value="index">{{region.label}}</option>
-		</select>
-		<clocks :unixtime="currentUnixtime"></clocks>
+		<region-selector :region="region" @change="onRegionChange"></region-selector>
 		<clocks :unixtime="currentUnixtime" :region="region"></clocks>
 	</div>
 
@@ -12,11 +8,13 @@
 <script>
 	import CONSTANTS from '../../utils/constants';
 	import clocks from '../clocks/';
+	import regionSelector from '../regionSelector/';
 	import {mapState} from 'vuex';
 
 	export default {
 		components: {
 			clocks,
+			regionSelector,
 		},
 		data() {
 			return {
@@ -26,10 +24,7 @@
 		computed: {
 			...mapState([
 				'region',
-				'datetime',
 				'currentUnixtime',
-				'initServerUnixtime',
-				'initDeviceUnixTime',
 			]),
 		},
 		created() {
@@ -41,6 +36,11 @@
 			};
 			this.$store.dispatch('loadServerTime', payload);
 			
+		},
+		methods: {
+			onRegionChange(payload) {
+				this.$store.dispatch('selectRegion', payload);
+			},
 		},
 	};
 
