@@ -22,16 +22,16 @@ export default new Vuex.Store({
 				method: 'GET',
 			});
 			
-			promise.done(function (data) {
+			promise.done((data) => {
 				state.initServerUnixtime = data.st * 1000;
 			});
 			
-			promise.fail(function (error) {
+			promise.fail((error) => {
 				const nd = new Date();
 				state.initServerUnixtime = nd.getTime();
 			});
 			
-			promise.then(function () {
+			promise.then(() => {
 				const nd = new Date();
 				state.initDeviceUnixTime = nd.getTime();
 				payload.callback();
