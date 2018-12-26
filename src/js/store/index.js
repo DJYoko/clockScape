@@ -40,7 +40,10 @@ export default new Vuex.Store({
 		updateTime: (state) =>{
 			const _nd = new Date();						
 			state.currentUnixtime = _nd.getTime() - state.initDeviceUnixTime + state.initServerUnixtime;
-		}
+		},
+		selectRegion: (state, payload) =>{
+			state.region = payload.region;
+		},
 	},
 	actions: {
 		loadServerTime: (context, payload) => {
@@ -48,6 +51,9 @@ export default new Vuex.Store({
 		},
 		updateTime: (context) => {
 			context.commit('updateTime');
-		}
+		},
+		selectRegion: (context, payload) => {
+			context.commit('selectRegion', payload);
+		},
 	}
 });
