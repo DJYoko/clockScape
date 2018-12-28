@@ -81,6 +81,7 @@
 	#view {
 		background-color: #000;
 		height: 100%;
+		overflow: hidden;
 		text-align: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -88,7 +89,7 @@
 	}
 
 	.blackbox {
-		width: 320px;
+		width: 200px;
 		margin: 0 0 0 auto;
 		padding: 20px 0;
 		background-color: rgba(0, 0, 0, 0.5);

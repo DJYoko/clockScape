@@ -26,8 +26,8 @@
 
 <style lang="scss">
 	.clock_number {
-		width: 33px;
-		height: 52px;
+		width: 16px;
+		height: 25px;
 		background-image: url("img/digital_number.png");
 		background-size: auto 100%;
 		background-repeat: no-repeat;
