@@ -92,7 +92,7 @@
 		width: 200px;
 		margin: 0 0 0 auto;
 		padding: 20px 0;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.6);
 		border-radius: 4px;
 	}
 

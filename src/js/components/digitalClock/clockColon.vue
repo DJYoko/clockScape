@@ -11,7 +11,7 @@
 
 <style lang="scss">
 	.clock_colon {
-		width: 16px;
+		width: 12px;
 		height: 25px;
 		background-image: url("img/digital_number.png");
 		background-size: auto 100%;

@@ -42,6 +42,7 @@
 		color: #fff;
 		border:none;
 		border-bottom: 1px solid #ffffff;
+		outline: none;
 	}
 	option {
 		color: #262626;
