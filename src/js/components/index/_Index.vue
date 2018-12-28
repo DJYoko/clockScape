@@ -47,21 +47,30 @@
 		},
 		created() {
 			const payload = {};
-			const init_region = (this.$route.params.region) ? this.$route.params.region : 'Tokyo';
-			this.$store.dispatch('selectRegion', {
-				region: init_region
-			});
+			this.syncRegion();
 			payload.callback = () => {
 				setInterval(() => {
 					this.$store.dispatch('updateTime');
 				}, 1000);
 			};
 			this.$store.dispatch('loadServerTime', payload);
-
+		},
+		updated() {
+			this.syncRegion();
 		},
 		methods: {
 			onRegionChange(payload) {
 				this.$store.dispatch('selectRegion', payload);
+			},
+			syncRegion() {
+				if (this.region === this.$route.params.region) {
+					return false;
+				}
+				const init_region = (this.$route.params.region) ? this.$route.params.region : 'Tokyo';
+				
+				this.$store.dispatch('selectRegion', {
+					region: init_region
+				});
 			},
 		},
 	};
