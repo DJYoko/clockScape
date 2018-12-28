@@ -2,75 +2,77 @@
 <html>
 
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!--[if lt IE 9]>
-	<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>    <![endif]-->
 </head>
 
 <body>
-	<div id="wrapper">
-		<!-- access URL: /bitbucket/clocks/dst/-->
-		<router-view></router-view>
-	</div>
-	<div id="info_modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<div id="wrapper">
+    <!-- access URL: /bitbucket/clocks/dst/-->
+    <router-view></router-view>
+</div>
+<div id="info_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">info</h4>
-      </div>
-      <div class="modal-body">
-        <h5>technology &amp; material</h5>
-		  <ul style="padding-left:20px;">
-		  	<li>Vue,Vuex</li>
-		  	<li>time zone &amp; offset <a href="https://www.epochconverter.com/timezones" target="_blank">https://www.epochconverter.com/timezones</a></li>
-			  <li>Photo: <a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
-			  <li>bootstrap: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a></li>
-		  </ul>
-		  <hr>
-		  <h5>source</h5>
-		  <ul style="padding-left:20px;">
-		  	<li>bitbucket <a href="https://bitbucket.org/djyoko/clockscape/src" target="_blank">https://bitbucket.org/djyoko/clockscape/src</a></li>
-		  </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">info</h4>
+            </div>
+            <div class="modal-body">
+                <h5>technology &amp; material</h5>
+                <ul style="padding-left:20px;">
+                    <li>Vue,Vuex</li>
+                    <li>time zone &amp; offset <a href="https://www.epochconverter.com/timezones"
+                                                  target="_blank">https://www.epochconverter.com/timezones</a></li>
+                    <li>Photo: <a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+                    <li>bootstrap: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a>
+                    </li>
+                    <li>world map material: <a href="https://freevectormaps.com/world-maps/WRLD-EPS-02-4001"
+                                               target="_blank">https://freevectormaps.com/world-maps/WRLD-EPS-02-4001</a>
+                    </li>
+                </ul>
+                <hr>
+                <h5>source</h5>
+                <ul style="padding-left:20px;">
+                    <li>bitbucket <a href="https://bitbucket.org/djyoko/clockscape/src"
+                                     target="_blank">https://bitbucket.org/djyoko/clockscape/src</a></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
-
-  </div>
 </div>
 </body>
 <script src="./js/clocks.js"></script>
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-	}
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-	html,
-	body,
-	#wrapper {
-		height: 100%;
-	}
-	
-	#info_modal{
-		word-wrap: break-word;
-	}
-	.modal-dialog {
-		width: 280px;
-	}
+    html,
+    body,
+    #wrapper {
+        height: 100%;
+    }
+
+    #info_modal {
+        word-wrap: break-word;
+    }
 </style>
 
 </html>
