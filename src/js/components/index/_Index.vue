@@ -3,11 +3,9 @@
         <p class="text-right info-link">
             <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#info_modal"></span>
         </p>
-        <div class="blackbox">
-            <div class="region_selector_wrapper">
-                <region-selector :region="region" @change="onRegionChange"></region-selector>
-            </div>
-            <clocks :unixtime="currentUnixtime" :region="region"></clocks>
+        <div class="blackbox region_selector_wrapper">
+            <region-selector :region="region" @change="onRegionChange" style="margin:0 10px 20px 0;"></region-selector>
+            <clocks :unixtime="currentUnixtime" :region="region" class="text-center"></clocks>
         </div>
         <div class="blackbox" id="map">
             <img src="img/worldmap.svg">
@@ -103,8 +101,7 @@
 
     .region_selector_wrapper {
         text-align: right;
-        padding-right: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .info-link {
