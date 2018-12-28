@@ -7,8 +7,8 @@
             <region-selector :region="region" @change="onRegionChange" style="margin:0 10px 20px 0;"></region-selector>
             <clocks :unixtime="currentUnixtime" :region="region" class="text-center"></clocks>
         </div>
-        <div class="blackbox" id="map">
-            <img src="img/worldmap.svg">
+        <div class="blackbox">
+            <region-pointer :region="region"></region-pointer>
         </div>
         <photo-info :region="region"></photo-info>
     </div>
@@ -16,8 +16,9 @@
 <script>
     import CONSTANTS from '../../utils/constants';
     import clocks from '../clocks/';
-    import regionSelector from '../regionSelector/';
     import photoInfo from '../photoInfo/';
+    import regionPointer from '../regionPointer/';
+    import regionSelector from '../regionSelector/';
     import {
         mapState
     } from 'vuex';
@@ -25,8 +26,9 @@
     export default {
         components: {
             clocks,
-            regionSelector,
             photoInfo,
+            regionPointer,
+            regionSelector,
         },
         data() {
             return {
@@ -91,7 +93,7 @@
 
     .blackbox {
         @media screen and (min-width: 768px) {
-            width: 200px;
+            width: 300px;
         }
         margin: 0 0 20px auto;
         padding: 20px 0;
@@ -117,14 +119,6 @@
             &:hover {
                 opacity: 0.75;
             }
-        }
-    }
-
-    #map {
-        padding: 0;
-        img {
-            display: block;
-            width: 100%;
         }
     }
 
