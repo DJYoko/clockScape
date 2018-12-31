@@ -23,5 +23,6 @@ a simple demo of VUE/VUEX.
 - photos [unsplach.com](https://unsplash.com/)
 - world map [https://freevectormaps.com](https://freevectormaps.com/world-maps/WRLD-EPS-02-4001)
 
-### source
-- [https://bitbucket.org/djyoko/clockscape/src](https://bitbucket.org/djyoko/clockscape/src)
+### source & demo (bitbucket)
+- Source [https://bitbucket.org/djyoko/clockscape/src](https://bitbucket.org/djyoko/clockscape/src)
+- Demo [https://djyoko.bitbucket.io/clockScape/](https://djyoko.bitbucket.io/clockScape/)
