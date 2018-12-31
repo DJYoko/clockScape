@@ -1,9 +1,9 @@
-#clockscape
+# clockscape
 
 a simple demo of VUE/VUEX.
 
 ### overview
-- get Unixtime from NICT (Japanâ€™s National Research and Development Agency) API.
+- get Unixtime from NICT (Japan’s National Research and Development Agency) API.
 - sync VUE store has 'unixtime' & 'region' state.
 - URL sync to REGION.
 - component `just show` Clocks & images of regions selected.
