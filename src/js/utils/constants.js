@@ -36,7 +36,9 @@ const REGIONS = {
 	},
 }
 
-const WEB_ROOT = '/bitbucket/clockscape/dst/';
+// const WEB_ROOT = '/bitbucket/clockscape/dst/';
+const _location = location.pathname;
+const WEB_ROOT = _location.substring(0, _location.lastIndexOf('/')) + '/';
 
 export default {
 	REGIONS,
