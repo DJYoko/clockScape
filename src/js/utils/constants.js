@@ -40,7 +40,10 @@ const REGIONS = {
 const _location = location.pathname;
 const WEB_ROOT = _location.substring(0, _location.lastIndexOf('/')) + '/';
 
+const TIME_API_URL = 'https://ntp-a1.nict.go.jp/cgi-bin/json';
+
 export default {
 	REGIONS,
 	WEB_ROOT,
+	TIME_API_URL,
 }

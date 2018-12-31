@@ -20,7 +20,7 @@ export default new Vuex.Store({
 	mutations: {
 		loadServerTime: (state, payload) => {
 			const promise = $.ajax({
-				url: 'https://ntp-a1.nict.go.jp/cgi-bin/json',
+				url: CONSTANTS.TIME_API_URL,
 				method: 'GET',
 			});
 
