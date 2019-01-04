@@ -18,13 +18,13 @@ a simple demo of VUE/VUEX.
 ### build command
 `npm run build:dev` / `npm run build:prod`
 
-### framework &amp; libraries
+### framework & libraries
 - [Vue](https://vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
 - [bootstrap](https://getbootstrap.com/)
 
-### global timezone info &amp; API
-- timezone &amp; offset list [https://www.epochconverter.com/timezones](https://www.epochconverter.com/timezones)
+### global timezone info & API
+- timezone & offset list [https://www.epochconverter.com/timezones](https://www.epochconverter.com/timezones)
 - NICT [https://www.nict.go.jp/](https://www.nict.go.jp/)
 
 ### visual materials
