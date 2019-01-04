@@ -1,6 +1,14 @@
 # clockscape
 a simple demo of VUE/VUEX.
 
+## demo
+[https://djyoko.bitbucket.io/clockScape/](https://djyoko.bitbucket.io/clockScape/)
+
+## source
+[https://bitbucket.org/djyoko/clockscape/src](https://bitbucket.org/djyoko/clockscape/src)
+
+----------
+
 ### overview
 - get Unixtime from NICT (Japan's National Research and Development Agency) API.
 - sync VUE store has 'unixtime' & 'region' state.
@@ -22,7 +30,3 @@ a simple demo of VUE/VUEX.
 ### visual materials
 - photos [unsplach.com](https://unsplash.com/)
 - world map [https://freevectormaps.com](https://freevectormaps.com/world-maps/WRLD-EPS-02-4001)
-
-### source & demo (bitbucket)
-- Source [https://bitbucket.org/djyoko/clockscape/src](https://bitbucket.org/djyoko/clockscape/src)
-- Demo [https://djyoko.bitbucket.io/clockScape/](https://djyoko.bitbucket.io/clockScape/)
