@@ -2,10 +2,7 @@
 a simple demo of VUE/VUEX.
 
 ## demo
-[https://djyoko.bitbucket.io/clockScape/](https://djyoko.bitbucket.io/clockScape/)
-
-## source
-[https://bitbucket.org/djyoko/clockscape/src](https://bitbucket.org/djyoko/clockscape/src)
+[https://djyoko.github.io/clockScape/](https://djyoko.github.io/clockScape/)
 
 ----------
 
