@@ -8,7 +8,7 @@ const enabledSourceMap = (MODE === 'development');
 module.exports = {
 	entry: __dirname + "/src/js/clocks.js",
 	output: {
-		path: __dirname + '/dst/js/',
+		path: __dirname + '/docs/js/',
 		filename: 'clocks.js'
 	},
 	module: {
