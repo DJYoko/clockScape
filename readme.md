@@ -10,7 +10,7 @@ a simple demo of VUE/VUEX.
 - get Unixtime from NICT (Japan's National Research and Development Agency) API.
 - sync VUE store has 'unixtime' & 'region' state.
 - URL sync to REGION.
-- component `just show` Clocks & images of regions selected.
+- component  `just show`  Clocks & images of regions selected.
 
 ### build command
 `npm run build:dev` / `npm run build:prod`
@@ -18,7 +18,7 @@ a simple demo of VUE/VUEX.
 ### framework & libraries
 - [Vue](https://vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
-- [bootstrap](https://getbootstrap.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 ### global timezone info & API
 - timezone & offset list [https://www.epochconverter.com/timezones](https://www.epochconverter.com/timezones)
