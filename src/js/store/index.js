@@ -11,7 +11,7 @@ const defaultUnixtime = defaultDate.getTime();
 
 export default new Vuex.Store({
 	state: {
-		region: 'Tokyo',
+		region: CONSTANTS.DEFAULT_REGION,
 		datetime: defaultUnixtime,
 		currentUnixtime: defaultUnixtime,
 		initServerUnixtime: defaultUnixtime,
