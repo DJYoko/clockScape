@@ -50,16 +50,12 @@
         },
         created() {
             const payload = {};
-            this.syncRegion();
             payload.callback = () => {
                 setInterval(() => {
                     this.$store.dispatch('updateTime');
                 }, 1000);
             };
             this.$store.dispatch('loadServerTime', payload);
-        },
-        updated() {
-            this.syncRegion();
         },
         methods: {
             onRegionChange(payload) {
@@ -69,7 +65,7 @@
                 if (this.region === this.$route.params.region) {
                     return false;
                 }
-                const init_region = (this.$route.params.region) ? this.$route.params.region : 'Tokyo';
+                const init_region = (this.$route.params.region) ? this.$route.params.region : CONSTANTS.DEFAULT_REGION;
 
                 this.$store.dispatch('selectRegion', {
                     region: init_region
