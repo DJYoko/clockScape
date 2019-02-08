@@ -5,5 +5,5 @@ RewriteBase /
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /bitbucket/clockscape/dst/index.html [L]
+RewriteRule . /github/clockscape/docs/index.html [L]
 </IfModule>
