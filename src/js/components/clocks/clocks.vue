@@ -6,9 +6,9 @@
 </template>
 
 <script>
-	import CONSTANTS from '../../utils/constants';
-	import analogClock from '../analogClock/';
-	import digitalClock from '../digitalClock/';
+	import CONSTANTS from '@js/utils/constants';
+	import analogClock from '@js/components/analogClock/';
+	import digitalClock from '@js/components/digitalClock/';
 	export default {
 		name: 'clocks',
 		components: {

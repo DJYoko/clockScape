@@ -14,11 +14,11 @@
     </div>
 </template>
 <script>
-    import CONSTANTS from '../../utils/constants';
-    import clocks from '../clocks/';
-    import photoInfo from '../photoInfo/';
-    import regionPointer from '../regionPointer/';
-    import regionSelector from '../regionSelector/';
+    import CONSTANTS from '@js/utils/constants';
+    import clocks from '@js/components/clocks/';
+    import photoInfo from '@js/components/photoInfo/';
+    import regionPointer from '@js/components/regionPointer/';
+    import regionSelector from '@js/components/regionSelector/';
     import {
         mapState
     } from 'vuex';
@@ -42,7 +42,6 @@
             ]),
             viewStyle() {
                 const style = {
-                    padding: '10px',
                     backgroundImage: 'url(img/region/' + this.region + '.jpg)',
                 };
                 return style;
@@ -78,6 +77,7 @@
 
 <style lang="scss">
     #view {
+        padding: 10px;
         background-color: #000;
         height: 100%;
         overflow: hidden;

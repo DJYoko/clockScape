@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import router from '../router/';
-import CONSTANTS from '../utils/constants';
+import CONSTANTS from '@js/utils/constants'
 
 Vue.use(Vuex);
 

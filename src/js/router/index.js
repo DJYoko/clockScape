@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Index from '../components/index';
+import Index from '@js/components//index'
 import VueRouter from 'vue-router';
-import CONSTANTS from '../utils/constants';
+import CONSTANTS from '@js/utils/constants'
 
 Vue.use(VueRouter);
 

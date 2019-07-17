@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import CONSTANTS from '../../utils/constants';
+	import CONSTANTS from '@js/utils/constants';
 	export default {
 		name: 'regionPointer',
 		props: {

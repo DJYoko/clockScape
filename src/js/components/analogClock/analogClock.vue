@@ -13,8 +13,8 @@
 </template>
 
 <script>
-	import panelMark from './panelMark';
-	import clockHand from './hand';
+	import panelMark from '@js/components/analogClock/panelMark';
+	import clockHand from '@js/components/analogClock/hand';
 	export default {
 		name: 'analogClock',
 		components: {
