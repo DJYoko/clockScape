@@ -1,4 +1,11 @@
 const REGIONS = {
+  Dubai: {
+    label: 'Dubai',
+    offset: 14400,
+    photoLink: 'https://unsplash.com/photos/jG3I8b5iyHI',
+    position: [25.1, 55.2],
+    latlng: [51.5287718, -0.2416808]
+  },
   London: {
     label: 'London',
     offset: 0,
@@ -19,6 +26,13 @@ const REGIONS = {
     photoLink: 'https://unsplash.com/photos/UnI8AGe1634',
     position: [40, 30],
     latlng: [40.6976637, -74.1197644]
+  },
+  RioDeJaneiro: {
+    label: 'Rio de Janeiro',
+    offset: -10800,
+    photoLink: 'https://unsplash.com/photos/OkiDIla7K8Q',
+    position: [71, 37],
+    latlng: [-22.54, -43.11]
   },
   Shanghai: {
     label: 'Shanghai',
