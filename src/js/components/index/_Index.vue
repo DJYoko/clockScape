@@ -66,9 +66,23 @@ export default {
     };
     this.$store.dispatch("loadServerTime", payload);
   },
+  watch: {
+    $route: {
+      handler: function(route) {
+        const currentRegion = route.query.region;
+        const payload = {
+          region: this.region // stored data
+        }
+        if(typeof currentRegion === 'string' && typeof CONSTANTS.REGIONS[currentRegion] === 'object') {
+          payload.region = currentRegion
+        }
+        this.$store.dispatch("selectRegion", payload);
+      },
+      immediate: true
+    }
+  },
   methods: {
     onRegionChange(payload) {
-      this.$store.dispatch("selectRegion", payload);
       this.$router.push({
         path: '/',
         query: {
