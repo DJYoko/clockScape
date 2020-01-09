@@ -6,7 +6,7 @@ const baseUri = window.location.pathname.replace(/\?.*/g, '')
 
 const router = new Router({
   mode: 'history',
-  base: '/',
+  base: baseUri,
   routes:[
     {
       path: CONSTANTS.WEB_ROOT,
