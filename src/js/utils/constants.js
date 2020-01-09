@@ -3,7 +3,7 @@ const REGIONS = {
     label: 'Dubai',
     offset: 14400,
     photoLink: 'https://unsplash.com/photos/jG3I8b5iyHI',
-    position: [25.1, 55.2],
+    position: [47.1, 62.2],
     latlng: [51.5287718, -0.2416808]
   },
   London: {
