@@ -75,18 +75,6 @@ export default {
           region: payload.region
         }
       })
-    },
-    syncRegion() {
-      if (this.region === this.$route.params.region) {
-        return false;
-      }
-      const init_region = this.$route.params.region
-        ? this.$route.params.region
-        : CONSTANTS.DEFAULT_REGION;
-
-      this.$store.dispatch("selectRegion", {
-        region: init_region
-      });
     }
   }
 };
