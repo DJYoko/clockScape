@@ -9,7 +9,7 @@ const router = new Router({
   base: baseUri,
   routes:[
     {
-      path: CONSTANTS.WEB_ROOT,
+      path: '/',
       name: 'index',
       component: Index,
       alias: CONSTANTS.WEB_ROOT + 'index.html'
