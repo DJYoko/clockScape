@@ -66,21 +66,29 @@ export default {
     };
     this.$store.dispatch("loadServerTime", payload);
   },
+  watch: {
+    $route: {
+      handler: function(route) {
+        const currentRegion = route.query.region;
+        const payload = {
+          region: this.region // stored data
+        }
+        if(typeof currentRegion === 'string' && typeof CONSTANTS.REGIONS[currentRegion] === 'object') {
+          payload.region = currentRegion
+        }
+        this.$store.dispatch("selectRegion", payload);
+      },
+      immediate: true
+    }
+  },
   methods: {
     onRegionChange(payload) {
-      this.$store.dispatch("selectRegion", payload);
-    },
-    syncRegion() {
-      if (this.region === this.$route.params.region) {
-        return false;
-      }
-      const init_region = this.$route.params.region
-        ? this.$route.params.region
-        : CONSTANTS.DEFAULT_REGION;
-
-      this.$store.dispatch("selectRegion", {
-        region: init_region
-      });
+      this.$router.push({
+        path: '/',
+        query: {
+          region: payload.region
+        }
+      })
     }
   }
 };

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import router from '../router/'
 import CONSTANTS from '@js/utils/constants'
 
 Vue.use(Vuex)
@@ -46,7 +45,6 @@ export default new Vuex.Store({
     },
     selectRegion: (state, payload) => {
       state.region = payload.region
-      router.push(CONSTANTS.WEB_ROOT + payload.region)
     }
   },
   actions: {

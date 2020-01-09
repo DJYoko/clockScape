@@ -1,11 +1,18 @@
-import 'babel-polyfill'
 import Vue from 'vue'
-import router from './router/'
+import 'babel-polyfill'
+import Router from 'vue-router'
 import store from './store/'
+import router from './router'
 
-// eslint-disable-next-line
-new Vue({
-  el: '#wrapper',
-  router,
-  store
-})
+window.addEventListener(
+  'DOMContentLoaded',
+  function() {
+    Vue.use(Router)
+
+    new Vue({
+      router,
+      store
+    }).$mount('#wrapper')
+  },
+  false
+)
