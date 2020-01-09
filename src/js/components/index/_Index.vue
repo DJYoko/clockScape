@@ -69,6 +69,12 @@ export default {
   methods: {
     onRegionChange(payload) {
       this.$store.dispatch("selectRegion", payload);
+      this.$router.push({
+        path: '/',
+        query: {
+          region: payload.region
+        }
+      })
     },
     syncRegion() {
       if (this.region === this.$route.params.region) {
