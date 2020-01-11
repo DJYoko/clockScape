@@ -97,7 +97,7 @@ export default {
 
 <style lang="scss">
 #view {
-  padding: 10px;
+  padding: 20px;
   background-color: #000;
   height: 100%;
   overflow: hidden;
@@ -108,13 +108,13 @@ export default {
 }
 
 .blackbox {
+  background-color: rgba(0, 0, 0, 0.3);
   @media screen and (min-width: 768px) {
-    width: 300px;
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   margin: 0 0 20px auto;
-  padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 4px;
+  padding: 20px;
 }
 
 .info-link {

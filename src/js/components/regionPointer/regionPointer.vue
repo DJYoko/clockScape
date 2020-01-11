@@ -46,7 +46,7 @@ div {
     height: 10px;
     margin-top: -5px;
     margin-left: -5px;
-    background-color: #ffff00;
+    background-color: #FFC107;
     border-radius: 10px;
     opacity: 1;
     transition: all 1000ms;
