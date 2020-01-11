@@ -28,13 +28,17 @@ export default {
 
 <style lang="scss">
 .photo_author_link_wrapper {
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
-  margin: 0;
+  padding: 20px;
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    margin: 0;
+    padding: 2px;
+  }
+  
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2px;
+  background: rgba(0, 0, 0, 0.4);
   font-size: 12px;
 }
 

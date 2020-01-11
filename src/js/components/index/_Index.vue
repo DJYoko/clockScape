@@ -99,7 +99,7 @@ export default {
 #view {
   padding: 20px;
   background-color: #000;
-  height: 100%;
+  min-height: 100%;
   overflow: hidden;
   text-align: center;
   background-size: cover;
