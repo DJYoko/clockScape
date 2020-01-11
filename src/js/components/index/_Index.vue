@@ -10,12 +10,13 @@
         data-target="#info_modal"
       ></span>
     </p>
-    <div class="blackbox region_selector_wrapper">
+    <div class="blackbox">
       <region-selector
         :region="region"
         @change="onRegionChange"
-        style="margin:0 10px 20px 0;"
       ></region-selector>
+    </div>
+    <div class="blackbox">
       <clocks
         :unixtime="currentUnixtime"
         :region="region"
@@ -114,11 +115,6 @@ export default {
   padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
-}
-
-.region_selector_wrapper {
-  text-align: right;
-  margin-bottom: 10px;
 }
 
 .info-link {

@@ -53,6 +53,9 @@ select {
   border: none;
   border-bottom: 1px solid #ffffff;
   outline: none;
+  width:calc(100% - 40px);
+  display: block;
+  margin:0 20px;
 }
 option {
   color: #262626;
