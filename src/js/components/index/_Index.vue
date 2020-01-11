@@ -108,10 +108,9 @@ export default {
 }
 
 .blackbox {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   @media screen and (min-width: 768px) {
     width: 280px;
-    background-color: rgba(0, 0, 0, 0.6);
   }
   margin: 0 0 20px auto;
   padding: 20px;
