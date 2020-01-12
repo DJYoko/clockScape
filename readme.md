@@ -7,11 +7,11 @@ a simple demo of VUE/VUEX.
 ----------
 
 ### overview
+- PWA: this web app is available for `added to a Home screen`. (both of iOS / Android)
 - get Unixtime from NICT (Japan's National Research and Development Agency) API.
 - sync VUE store has 'unixtime' & 'region' state.
 - URL sync to REGION.
 - component  `just show`  Clocks & images of regions selected.
-- PWA option is enabled. (both of iOS / Android)
 
 ### build command
 `npm run build:dev` / `npm run build:prod`
