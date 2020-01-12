@@ -52,8 +52,10 @@ export default {
   computed: {
     ...mapState(["region", "currentUnixtime"]),
     viewStyle() {
+      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
+      const imgPath = this.getBackgroundImagePath(this.region)
       const style = {
-        backgroundImage: "url(./img/region/" + this.region + ".jpg)"
+        backgroundImage: "url("+imgPath+")"
       };
       return style;
     }
@@ -83,6 +85,9 @@ export default {
     }
   },
   methods: {
+    getBackgroundImagePath(region) {
+      return "./img/region/" + region + ".jpg"
+    },
     onRegionChange(payload) {
       this.$router.push({
         path: '/',
@@ -90,6 +95,8 @@ export default {
           region: payload.region
         }
       })
+      const tmpImt = new Image();
+      tmpImt.src = this.getBackgroundImagePath(payload.region);
     }
   }
 };
