@@ -2,8 +2,8 @@ import Index from '@js/components//index'
 import Router from 'vue-router'
 import CONSTANTS from '@js/utils/constants'
 
-const baseUri = window.location.pathname.replace(/\?.*/g, '')
-
+const baseUri = window.location.pathname.replace(/\?.*/g, '').replace(/index\.html/g,'')
+console.log(baseUri)
 const router = new Router({
   mode: 'history',
   base: baseUri,
@@ -13,6 +13,10 @@ const router = new Router({
       name: 'index',
       component: Index,
       alias: CONSTANTS.WEB_ROOT + 'index.html'
+    },
+    {
+      path: '/index.html',
+      component: Index
     }
   ]
 })
