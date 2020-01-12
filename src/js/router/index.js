@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import CONSTANTS from '@js/utils/constants'
 
 const baseUri = window.location.pathname.replace(/\?.*/g, '').replace(/index\.html/g,'')
-alert(baseUri)
+
 const router = new Router({
   mode: 'history',
   base: baseUri,
