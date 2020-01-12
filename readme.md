@@ -11,6 +11,7 @@ a simple demo of VUE/VUEX.
 - sync VUE store has 'unixtime' & 'region' state.
 - URL sync to REGION.
 - component  `just show`  Clocks & images of regions selected.
+- PWA option is enabled. (both of iOS / Android)
 
 ### build command
 `npm run build:dev` / `npm run build:prod`
