@@ -53,7 +53,7 @@ export default {
     ...mapState(["region", "currentUnixtime"]),
     viewStyle() {
       const style = {
-        backgroundImage: "url(img/region/" + this.region + ".jpg)"
+        backgroundImage: "url(./img/region/" + this.region + ".jpg)"
       };
       return style;
     }
