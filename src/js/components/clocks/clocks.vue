@@ -10,6 +10,7 @@
 
 <script>
 import CONSTANTS from "@js/utils/constants";
+import functions from "@js/utils/functions";
 import analogClock from "@js/components/analogClock/";
 import digitalClock from "@js/components/digitalClock/";
 export default {
@@ -30,13 +31,7 @@ export default {
   },
   computed: {
     datetime() {
-      const deviceTimezoneOffset = 60 * new Date().getTimezoneOffset(); // second
-      const selectedRegionTimezoneOffset =
-        CONSTANTS.REGIONS[this.region].offset; //second
-      const selectedRegionLocaltime =
-        this.unixtime +
-        (deviceTimezoneOffset + selectedRegionTimezoneOffset) * 1000; // milli second
-      return new Date(selectedRegionLocaltime);
+      return functions.getLocalTime(this.region, this.unixtime)
     }
   }
 };
