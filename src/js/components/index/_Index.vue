@@ -55,13 +55,13 @@ export default {
     photoLink() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
       const localTime = functions.getLocalTime(region, this.currentUnixtime)
-      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
+      const dayOrNight = functions.getDayOrNight(localTime)
       return CONSTANTS.REGIONS[region].photoLink[dayOrNight]
     },
     viewStyle() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
       const localTime = functions.getLocalTime(region, this.currentUnixtime)
-      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
+      const dayOrNight = functions.getDayOrNight(localTime)
       const style = {
         backgroundImage: `url(./img/background/${dayOrNight}/${region}.jpg)`
       };

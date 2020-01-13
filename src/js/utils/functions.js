@@ -11,4 +11,8 @@ functions.getLocalTime = function(region, unixTime) {
     (deviceTimezoneOffset + selectedRegionTimezoneOffset) * 1000; // milli second
   return new Date(selectedRegionLocalDateTime);
 }
+
+functions.getDayOrNight = function(datetime) {
+  return (datetime.getHours() < 6 || 18 <= datetime.getHours()) ? 'night' : 'day'
+}
 export default functions
