@@ -26,11 +26,12 @@
     <div class="blackbox">
       <region-pointer :region="region"></region-pointer>
     </div>
-    <photo-info :region="region"></photo-info>
+    <photo-info :link="photoLink"></photo-info>
   </div>
 </template>
 <script>
 import CONSTANTS from "@js/utils/constants";
+import functions from "@js/utils/functions";
 import clocks from "@js/components/clocks/";
 import photoInfo from "@js/components/photoInfo/";
 import regionPointer from "@js/components/regionPointer/";
@@ -51,11 +52,18 @@ export default {
   },
   computed: {
     ...mapState(["region", "currentUnixtime"]),
+    photoLink() {
+      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
+      const localTime = functions.getLocalTime(region, this.currentUnixtime)
+      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
+      return CONSTANTS.REGIONS[region].photoLink[dayOrNight]
+    },
     viewStyle() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
-      const imgPath = this.getBackgroundImagePath(this.region)
+      const localTime = functions.getLocalTime(region, this.currentUnixtime)
+      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
       const style = {
-        backgroundImage: "url("+imgPath+")"
+        backgroundImage: `url(./img/background/${dayOrNight}/${region}.jpg)`
       };
       return style;
     }
@@ -86,7 +94,9 @@ export default {
   },
   methods: {
     getBackgroundImagePath(region) {
-      return "./img/region/" + region + ".jpg"
+      const localTime = functions.getLocalTime(region, this.currentUnixtime)
+      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
+      return `./img/background/${dayOrNight}/${region}.jpg`
     },
     onRegionChange(payload) {
       this.$router.push({
@@ -95,8 +105,6 @@ export default {
           region: payload.region
         }
       })
-      const tmpImt = new Image();
-      tmpImt.src = this.getBackgroundImagePath(payload.region);
     }
   }
 };
