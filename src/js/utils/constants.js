@@ -1,4 +1,15 @@
 const REGIONS = {
+  // Sydney, Australia
+  Sydney: {
+    label: 'Sydney',
+    offset: 36000,
+    photoLink:
+      {day: 'https://unsplash.com/photos/7Zb7kUyQg1E',
+        night: 'https://unsplash.com/photos/ZXlfq5mExMs'
+      },
+    position: [75.7, 86.4],
+    latlng: [-33.865143, 151.209900]
+  },
   Tokyo: {
     label: 'Tokyo',
     offset: 32400,
