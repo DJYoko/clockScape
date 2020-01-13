@@ -50,6 +50,16 @@ const REGIONS = {
     position: [32.5, 57.3],
     latlng: [55.5815245, 36.8251335]
   },
+  Paris: {
+    label: 'Paris',
+    offset: 3600,
+    photoLink:
+      {day: 'https://unsplash.com/photos/nnzkZNYWHaU',
+        night: 'https://unsplash.com/photos/milUxSbp4_A'
+      },
+    position: [35, 49.3],
+    latlng: [48.864716, 2.349014]
+  },
   London: {
     label: 'London',
     offset: 0,
