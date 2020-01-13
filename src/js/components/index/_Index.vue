@@ -54,7 +54,9 @@ export default {
     ...mapState(["region", "currentUnixtime"]),
     photoLink() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
-      return CONSTANTS.REGIONS[region].photoLink
+      const localTime = functions.getLocalTime(region, this.currentUnixtime)
+      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
+      return CONSTANTS.REGIONS[region].photoLink[dayOrNight]
     },
     viewStyle() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
