@@ -1,32 +1,32 @@
 <template>
-  <div
-    id="view"
-    :style="viewStyle"
-  >
-    <p class="text-right info-link">
-      <span
-        class="glyphicon glyphicon-info-sign"
-        data-toggle="modal"
-        data-target="#info_modal"
-      ></span>
-    </p>
-    <div class="blackbox">
-      <region-selector
-        :region="region"
-        @change="onRegionChange"
-      ></region-selector>
+  <div id="view" :style="viewStyle" @click="onClick">
+    <div class="contentWrapper" :class="contentWrapperClass">
+      <p class="text-right info-link">
+        <span
+          class="glyphicon glyphicon-info-sign"
+          data-toggle="modal"
+          data-target="#info_modal"
+        ></span>
+      </p>
+      <div class="blackbox" @click.stop.prevent>
+        <region-selector
+          :region="region"
+          @change="onRegionChange"
+          @click.stop.prevent
+        ></region-selector>
+      </div>
+      <div class="blackbox">
+        <clocks
+          :unixtime="currentUnixtime"
+          :region="region"
+          class="text-center"
+        ></clocks>
+      </div>
+      <div class="blackbox">
+        <region-pointer :region="region"></region-pointer>
+      </div>
+      <photo-info :link="photoLink"></photo-info>
     </div>
-    <div class="blackbox">
-      <clocks
-        :unixtime="currentUnixtime"
-        :region="region"
-        class="text-center"
-      ></clocks>
-    </div>
-    <div class="blackbox">
-      <region-pointer :region="region"></region-pointer>
-    </div>
-    <photo-info :link="photoLink"></photo-info>
   </div>
 </template>
 <script>
@@ -47,21 +47,27 @@ export default {
   },
   data() {
     return {
-      regions: CONSTANTS.REGIONS
+      regions: CONSTANTS.REGIONS,
+      hideOnMobile: false
     };
   },
   computed: {
     ...mapState(["region", "currentUnixtime"]),
+    contentWrapperClass() {
+      return {
+        hideOnMobile: this.hideOnMobile
+      };
+    },
     photoLink() {
-      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
-      const localTime = functions.getLocalTime(region, this.currentUnixtime)
-      const dayOrNight = functions.getDayOrNight(localTime)
-      return CONSTANTS.REGIONS[region].photoLink[dayOrNight]
+      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION];
+      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const dayOrNight = functions.getDayOrNight(localTime);
+      return CONSTANTS.REGIONS[region].photoLink[dayOrNight];
     },
     viewStyle() {
-      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
-      const localTime = functions.getLocalTime(region, this.currentUnixtime)
-      const dayOrNight = functions.getDayOrNight(localTime)
+      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION];
+      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const dayOrNight = functions.getDayOrNight(localTime);
       const style = {
         backgroundImage: `url(./img/background/${dayOrNight}/${region}.jpg)`
       };
@@ -83,9 +89,12 @@ export default {
         const currentRegion = route.query.region;
         const payload = {
           region: this.region // stored data
-        }
-        if(typeof currentRegion === 'string' && typeof CONSTANTS.REGIONS[currentRegion] === 'object') {
-          payload.region = currentRegion
+        };
+        if (
+          typeof currentRegion === "string" &&
+          typeof CONSTANTS.REGIONS[currentRegion] === "object"
+        ) {
+          payload.region = currentRegion;
         }
         this.$store.dispatch("selectRegion", payload);
       },
@@ -93,18 +102,22 @@ export default {
     }
   },
   methods: {
+    onClick() {
+      this.hideOnMobile = !this.hideOnMobile;
+    },
     getBackgroundImagePath(region) {
-      const localTime = functions.getLocalTime(region, this.currentUnixtime)
-      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
-      return `./img/background/${dayOrNight}/${region}.jpg`
+      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const dayOrNight =
+        localTime.getHours() < 6 || 18 < localTime.getHours() ? "night" : "day";
+      return `./img/background/${dayOrNight}/${region}.jpg`;
     },
     onRegionChange(payload) {
       this.$router.push({
-        path: '/',
+        path: "/",
         query: {
           region: payload.region
         }
-      })
+      });
     }
   }
 };
@@ -122,9 +135,19 @@ export default {
   background-position: center;
 }
 
+.contentWrapper {
+  opacity: 1;
+  transition: all 200ms ease-out;
+  @media screen and (max-width: 768px) {
+    &.hideOnMobile {
+      opacity: 0;
+    }
+  }
+}
+
 .blackbox {
   background-color: rgba(0, 0, 0, 0.4);
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     width: 280px;
   }
   margin: 0 0 20px auto;
