@@ -31,6 +31,7 @@
 </template>
 <script>
 import CONSTANTS from "@js/utils/constants";
+import functions from "@js/utils/functions";
 import clocks from "@js/components/clocks/";
 import photoInfo from "@js/components/photoInfo/";
 import regionPointer from "@js/components/regionPointer/";
@@ -86,7 +87,10 @@ export default {
   },
   methods: {
     getBackgroundImagePath(region) {
-      return "./img/region/" + region + ".jpg"
+      const localTime = functions.getLocalTime(region, this.currentUnixtime)
+      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
+      console.log(localTime.getHours())
+      return "./img/" +  dayOrNight + '/' + region + ".jpg"
     },
     onRegionChange(payload) {
       this.$router.push({
