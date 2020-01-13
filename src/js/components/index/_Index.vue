@@ -54,9 +54,10 @@ export default {
     ...mapState(["region", "currentUnixtime"]),
     viewStyle() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
-      const imgPath = this.getBackgroundImagePath(this.region)
+      const localTime = functions.getLocalTime(region, this.currentUnixtime)
+      const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
       const style = {
-        backgroundImage: "url("+imgPath+")"
+        backgroundImage: `url(./img/background/${dayOrNight}/${region}.jpg)`
       };
       return style;
     }
@@ -89,8 +90,7 @@ export default {
     getBackgroundImagePath(region) {
       const localTime = functions.getLocalTime(region, this.currentUnixtime)
       const dayOrNight = (localTime.getHours() < 6 || 18 < localTime.getHours()) ? 'night' : 'day'
-      console.log(localTime.getHours())
-      return "./img/" +  dayOrNight + '/' + region + ".jpg"
+      return `./img/background/${dayOrNight}/${region}.jpg`
     },
     onRegionChange(payload) {
       this.$router.push({
