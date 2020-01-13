@@ -99,8 +99,6 @@ export default {
           region: payload.region
         }
       })
-      const tmpImt = new Image();
-      tmpImt.src = this.getBackgroundImagePath(payload.region);
     }
   }
 };
