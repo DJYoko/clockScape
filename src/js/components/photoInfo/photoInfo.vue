@@ -13,15 +13,10 @@ import CONSTANTS from "@js/utils/constants";
 export default {
   name: "photoInfo",
   props: {
-    region: {
+    link: {
       type: String,
       required: true
-    }
-  },
-  computed: {
-    link() {
-      return CONSTANTS.REGIONS[this.region].photoLink;
-    }
+    },
   }
 };
 </script>

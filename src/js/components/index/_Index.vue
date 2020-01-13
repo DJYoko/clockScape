@@ -26,7 +26,7 @@
     <div class="blackbox">
       <region-pointer :region="region"></region-pointer>
     </div>
-    <photo-info :region="region"></photo-info>
+    <photo-info :link="photoLink"></photo-info>
   </div>
 </template>
 <script>
@@ -52,6 +52,10 @@ export default {
   },
   computed: {
     ...mapState(["region", "currentUnixtime"]),
+    photoLink() {
+      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
+      return CONSTANTS.REGIONS[region].photoLink
+    },
     viewStyle() {
       const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION]
       const localTime = functions.getLocalTime(region, this.currentUnixtime)
