@@ -55,6 +55,7 @@ select {
   outline: none;
   width:100%;
   display: block;
+  font-size:16px;
 }
 option {
   color: #262626;
