@@ -150,7 +150,7 @@ export default {
   @media screen and (min-width: 769px) {
     width: 280px;
   }
-  margin: 0 0 20px auto;
+  margin: 0 0 1px auto;
   padding: 20px;
 }
 
