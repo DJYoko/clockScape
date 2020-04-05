@@ -1,5 +1,5 @@
-# clockscape
-a simple demo of VUE/VUEX.
+# clockScape
+a simple demo of Vue/Vuex/Vue Router.
 
 ## demo
 [https://djyoko.github.io/clockScape/](https://djyoko.github.io/clockScape/)
@@ -9,8 +9,8 @@ a simple demo of VUE/VUEX.
 ### overview
 - PWA: this web app is available for `added to a Home screen`. (both of iOS / Android)
 - get Unixtime from NICT (Japan's National Research and Development Agency) API.
-- sync VUE store has 'unixtime' & 'region' state.
-- URL sync to REGION.
+- sync Vue store has 'unixtime' & 'region' state.
+- URL sync to REGION. (handled by Vue Router).
 - component  `just show`  Clocks & images of regions selected.
 
 ### build command
@@ -19,6 +19,7 @@ a simple demo of VUE/VUEX.
 ### framework & libraries
 - [Vue](https://vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
 - [Bootstrap](https://getbootstrap.com/)
 
 ### global timezone info & API
