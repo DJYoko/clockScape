@@ -8,21 +8,21 @@
           data-target="#infoModal"
         ></span>
       </p>
-      <div class="blackbox" @click.stop.prevent>
+      <div class="blackBox" @click.stop.prevent>
         <region-selector
           :region="region"
           @change="onRegionChange"
           @click.stop.prevent
         ></region-selector>
       </div>
-      <div class="blackbox">
+      <div class="blackBox">
         <clocks
           :unixtime="currentUnixtime"
           :region="region"
           class="text-center"
         ></clocks>
       </div>
-      <div class="blackbox">
+      <div class="blackBox">
         <region-pointer :region="region"></region-pointer>
       </div>
       <photo-info :link="photoLink"></photo-info>
@@ -145,7 +145,7 @@ export default {
   }
 }
 
-.blackbox {
+.blackBox {
   background-color: rgba(0, 0, 0, 0.4);
   @media screen and (min-width: 769px) {
     width: 280px;
