@@ -1,10 +1,9 @@
 <template>
-  <p class="photo_author_link_wrapper">
-    Photo info: <a
-      class="photo_author_link"
-      :href="link"
-      target="_blank"
-    >{{ link }}</a>
+  <p class="c-photoInfo">
+    Photo info:
+    <a class="c-photoInfo__authorLink" :href="link" target="_blank">{{
+      link
+    }}</a>
   </p>
 </template>
 
@@ -16,14 +15,17 @@ export default {
     link: {
       type: String,
       required: true
-    },
+    }
   }
 };
 </script>
 
-<style lang="scss">
-.photo_author_link_wrapper {
+<style lang="scss" scoped>
+.c-photoInfo {
   padding: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
   @media screen and (min-width: 768px) {
     position: fixed;
     bottom: 5px;
@@ -31,16 +33,12 @@ export default {
     margin: 0;
     padding: 2px;
   }
-  
-  color: #fff;
-  background: rgba(0, 0, 0, 0.4);
-  font-size: 12px;
-}
 
-.photo_author_link {
-  color: #fff;
-  &:hover {
+  &__authorLink {
     color: #fff;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 </style>

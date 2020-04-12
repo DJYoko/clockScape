@@ -1,5 +1,5 @@
 <template>
-  <div id="clocks_wrapper">
+  <div>
     <analog-clock
       :datetime="datetime"
       style="margin: 0 auto 20px;"

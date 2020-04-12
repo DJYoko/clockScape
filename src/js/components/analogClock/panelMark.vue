@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="panel_mark"
-    :style="markStyle"
-    :class="markClass"
-  ></div>
+  <div :style="markStyle" :class="markClass"></div>
 </template>
 
 <script>
@@ -29,8 +25,8 @@ export default {
   }
 };
 </script>
-<style>
-.panel_mark {
+<style lang="scss" scoped>
+div {
   width: 100%;
   height: 1px;
   border: 2px solid #fff;
@@ -39,9 +35,8 @@ export default {
   position: absolute;
   top: 50%;
   left: 0;
-}
-
-.bold {
-  border-width: 8px;
+  &.bold {
+    border-width: 8px;
+  }
 }
 </style>

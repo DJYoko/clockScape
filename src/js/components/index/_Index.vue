@@ -1,28 +1,28 @@
 <template>
   <div id="view" :style="viewStyle" @click="onClick">
-    <div class="contentWrapper" :class="contentWrapperClass">
-      <p class="text-right info-link">
+    <div class="l-contentWrapper" :class="contentWrapperClass">
+      <p class="c-infoLink">
         <span
           class="glyphicon glyphicon-info-sign"
           data-toggle="modal"
-          data-target="#info_modal"
+          data-target="#infoModal"
         ></span>
       </p>
-      <div class="blackbox" @click.stop.prevent>
+      <div class="c-blackBox" @click.stop.prevent>
         <region-selector
           :region="region"
           @change="onRegionChange"
           @click.stop.prevent
         ></region-selector>
       </div>
-      <div class="blackbox">
+      <div class="c-blackBox">
         <clocks
           :unixtime="currentUnixtime"
           :region="region"
           class="text-center"
         ></clocks>
       </div>
-      <div class="blackbox">
+      <div class="c-blackBox">
         <region-pointer :region="region"></region-pointer>
       </div>
       <photo-info :link="photoLink"></photo-info>
@@ -123,7 +123,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #view {
   padding: 20px;
   background-color: #000;
@@ -135,7 +135,7 @@ export default {
   background-position: center;
 }
 
-.contentWrapper {
+.l-contentWrapper {
   opacity: 1;
   transition: all 200ms ease-out;
   @media screen and (max-width: 768px) {
@@ -145,7 +145,7 @@ export default {
   }
 }
 
-.blackbox {
+.c-blackBox {
   background-color: rgba(0, 0, 0, 0.4);
   @media screen and (min-width: 769px) {
     width: 280px;
@@ -154,7 +154,8 @@ export default {
   padding: 20px;
 }
 
-.info-link {
+.c-infoLink {
+  text-align: right;
   .glyphicon {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.5);
