@@ -1,5 +1,5 @@
 <template>
-  <div class="digital_clock">
+  <div class="c-digitalClock">
     <clock-number
       class="clock_element"
       :value="Number(yymmdd[0])"
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style>
-.digital_clock {
+.c-digitalClock {
   width: 100%;
   margin: 0 auto;
   position: relative;
