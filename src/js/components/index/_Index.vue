@@ -1,6 +1,6 @@
 <template>
   <div id="view" :style="viewStyle" @click="onClick">
-    <div class="contentWrapper" :class="contentWrapperClass">
+    <div class="l-contentWrapper" :class="contentWrapperClass">
       <p class="text-right infoLink">
         <span
           class="glyphicon glyphicon-info-sign"
@@ -135,7 +135,7 @@ export default {
   background-position: center;
 }
 
-.contentWrapper {
+.l-contentWrapper {
   opacity: 1;
   transition: all 200ms ease-out;
   @media screen and (max-width: 768px) {
