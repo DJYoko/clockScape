@@ -1,7 +1,9 @@
 <template>
-  <p class="photoInfo">
+  <p class="c-photoInfo">
     Photo info:
-    <a class="authorLink" :href="link" target="_blank">{{ link }}</a>
+    <a class="c-photoInfo__authorLink" :href="link" target="_blank">{{
+      link
+    }}</a>
   </p>
 </template>
 
@@ -19,8 +21,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.photoInfo {
+.c-photoInfo {
   padding: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
   @media screen and (min-width: 768px) {
     position: fixed;
     bottom: 5px;
@@ -29,15 +34,11 @@ export default {
     padding: 2px;
   }
 
-  color: #fff;
-  background: rgba(0, 0, 0, 0.4);
-  font-size: 12px;
-}
-
-.authorLink {
-  color: #fff;
-  &:hover {
+  &__authorLink {
     color: #fff;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 </style>
