@@ -1,7 +1,7 @@
 <template>
   <div id="view" :style="viewStyle" @click="onClick">
     <div class="contentWrapper" :class="contentWrapperClass">
-      <p class="text-right info-link">
+      <p class="text-right infoLink">
         <span
           class="glyphicon glyphicon-info-sign"
           data-toggle="modal"
@@ -154,7 +154,7 @@ export default {
   padding: 20px;
 }
 
-.info-link {
+.infoLink {
   .glyphicon {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.5);
