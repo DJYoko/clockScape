@@ -5,7 +5,7 @@
         <span
           class="glyphicon glyphicon-info-sign"
           data-toggle="modal"
-          data-target="#info_modal"
+          data-target="#infoModal"
         ></span>
       </p>
       <div class="blackbox" @click.stop.prevent>
