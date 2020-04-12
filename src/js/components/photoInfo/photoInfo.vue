@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .photo_author_link_wrapper {
   padding: 20px;
   @media screen and (min-width: 768px) {

@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .clock_colon {
   width: 12px;
   height: 25px;

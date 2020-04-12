@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .clock_number {
   width: 16px;
   height: 25px;

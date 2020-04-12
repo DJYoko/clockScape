@@ -123,7 +123,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #view {
   padding: 20px;
   background-color: #000;
