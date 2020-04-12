@@ -1,10 +1,7 @@
 <template>
-  <p class="photo_author_link_wrapper">
-    Photo info: <a
-      class="photo_author_link"
-      :href="link"
-      target="_blank"
-    >{{ link }}</a>
+  <p class="photoInfo">
+    Photo info:
+    <a class="authorLink" :href="link" target="_blank">{{ link }}</a>
   </p>
 </template>
 
@@ -16,13 +13,13 @@ export default {
     link: {
       type: String,
       required: true
-    },
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.photo_author_link_wrapper {
+.photoInfo {
   padding: 20px;
   @media screen and (min-width: 768px) {
     position: fixed;
@@ -31,13 +28,13 @@ export default {
     margin: 0;
     padding: 2px;
   }
-  
+
   color: #fff;
   background: rgba(0, 0, 0, 0.4);
   font-size: 12px;
 }
 
-.photo_author_link {
+.authorLink {
   color: #fff;
   &:hover {
     color: #fff;
