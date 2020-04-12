@@ -1,5 +1,5 @@
 <template>
-  <div class="clock_colon"></div>
+  <div></div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.clock_colon {
+div {
   width: 12px;
   height: 25px;
   background-image: url("img/digital_number.png");

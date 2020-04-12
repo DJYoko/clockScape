@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="clock_number"
-    :style="numberStyle"
-  >
-  </div>
+  <div :style="numberStyle"></div>
 </template>
 
 <script>
@@ -27,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.clock_number {
+div {
   width: 16px;
   height: 25px;
   background-image: url("img/digital_number.png");

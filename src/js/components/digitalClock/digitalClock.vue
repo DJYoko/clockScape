@@ -1,29 +1,29 @@
 <template>
   <div class="c-digitalClock">
     <clock-number
-      class="clock_element"
+      class="c-digitalClock__part"
       :value="Number(yymmdd[0])"
     ></clock-number>
     <clock-number
-      class="clock_element"
+      class="c-digitalClock__part"
       :value="Number(yymmdd[1])"
     ></clock-number>
-    <clock-colon class="clock_element"></clock-colon>
+    <clock-colon class="c-digitalClock__part"></clock-colon>
     <clock-number
-      class="clock_element"
+      class="c-digitalClock__part"
       :value="Number(yymmdd[2])"
     ></clock-number>
     <clock-number
-      class="clock_element"
+      class="c-digitalClock__part"
       :value="Number(yymmdd[3])"
     ></clock-number>
-    <clock-colon class="clock_element"></clock-colon>
+    <clock-colon class="c-digitalClock__part"></clock-colon>
     <clock-number
-      class="clock_element"
+      class="c-digitalClock__part"
       :value="Number(yymmdd[4])"
     ></clock-number>
     <clock-number
-      class="clock_element"
+      class="c-digitalClock__part"
       :value="Number(yymmdd[5])"
     ></clock-number>
   </div>
@@ -68,7 +68,7 @@ export default {
   position: relative;
 }
 
-.clock_element {
+.c-digitalClock__part {
   display: inline-block;
   vertical-align: bottom;
 }
