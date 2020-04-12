@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="hand"
-    :style="handStyle"
-    :class="handClass"
-  ></div>
+  <div :style="handStyle" :class="handClass"></div>
 </template>
 
 <script>
@@ -44,8 +40,8 @@ export default {
   }
 };
 </script>
-<style>
-.hand {
+<style lang="scss" scoped>
+div {
   position: absolute;
   width: 2px;
   height: 45%;
@@ -53,16 +49,15 @@ export default {
   top: 5%;
   background: #fff;
   transform-origin: bottom;
-}
+  &.hour {
+    height: 30%;
+    top: 20%;
+  }
 
-.hour {
-  height: 30%;
-  top: 20%;
-}
-
-.second {
-  width: 1px;
-  height: 40%;
-  top: 10%;
+  &.second {
+    width: 1px;
+    height: 40%;
+    top: 10%;
+  }
 }
 </style>

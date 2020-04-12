@@ -1,19 +1,15 @@
 <template>
-  <div class="analog_clock">
-    <div class="background_display">
+  <div class="c-analogClock">
+    <div class="c-analogClock__background">
       <panel-mark
         v-for="(item, index) in 30"
         :key="index"
         :index="index"
-        class="panel_mark"
       >
       </panel-mark>
     </div>
-    <div class="hands_container">
-      <clock-hand
-        hand-type="hour"
-        :value="datetimeObject.hour"
-      ></clock-hand>
+    <div class="c-analogClock__hands">
+      <clock-hand hand-type="hour" :value="datetimeObject.hour"></clock-hand>
       <clock-hand
         hand-type="minute"
         :value="datetimeObject.minute"
@@ -54,26 +50,26 @@ export default {
 };
 </script>
 
-<style>
-.analog_clock {
+<style lang="scss" scoped>
+.c-analogClock {
   width: 150px;
   height: 150px;
   position: relative;
-}
 
-.hands_container,
-.background_display {
-  width: 100%;
-  height: 100%;
-}
+  &__hands,
+  &__background {
+    width: 100%;
+    height: 100%;
+  }
 
-.background_display {
-  position: relative;
-}
+  &__background {
+    position: relative;
+  }
 
-.hands_container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  &__hands {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 </style>
