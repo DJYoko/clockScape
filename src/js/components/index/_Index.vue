@@ -52,20 +52,20 @@ export default {
     };
   },
   computed: {
-    ...mapState(["region", "currentUnixtime"]),
+    ...mapState('main', ["region", "currentUnixtime"]),
     contentWrapperClass() {
       return {
         hideOnMobile: this.hideOnMobile
       };
     },
     photoLink() {
-      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION];
+      const region = this.region || CONSTANTS.DEFAULT_REGION;
       const localTime = functions.getLocalTime(region, this.currentUnixtime);
       const dayOrNight = functions.getDayOrNight(localTime);
       return CONSTANTS.REGIONS[region].photoLink[dayOrNight];
     },
     viewStyle() {
-      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION];
+      const region = this.region ||CONSTANTS.DEFAULT_REGION;
       const localTime = functions.getLocalTime(region, this.currentUnixtime);
       const dayOrNight = functions.getDayOrNight(localTime);
       const style = {
@@ -78,10 +78,10 @@ export default {
     const payload = {};
     payload.callback = () => {
       setInterval(() => {
-        this.$store.dispatch("updateTime");
+        this.$store.dispatch("main/updateTime");
       }, 1000);
     };
-    this.$store.dispatch("loadServerTime", payload);
+    this.$store.dispatch("main/loadServerTime", payload);
   },
   watch: {
     $route: {
@@ -96,7 +96,7 @@ export default {
         ) {
           payload.region = currentRegion;
         }
-        this.$store.dispatch("selectRegion", payload);
+        this.$store.dispatch("main/selectRegion", payload);
       },
       immediate: true
     }
