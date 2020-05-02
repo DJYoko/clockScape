@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import CONSTANTS from "@js/utils/constants";
+import constants from "@js/utils/constants";
 export default {
   name: "photoInfo",
   props: {

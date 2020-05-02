@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CONSTANTS from "@js/utils/constants";
+import constants from "@js/utils/constants";
 export default {
   name: "regionSelector",
   props: {
@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      regions: CONSTANTS.REGIONS,
+      regions: constants.REGIONS,
       selectedRegion: ""
     };
   },
