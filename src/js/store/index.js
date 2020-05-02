@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import 'babel-polyfill'
-import Vuex from 'Vuex'
+import vuex from 'vuex'
 import main from  './main'
 
-Vue.use(Vuex)
+Vue.use(vuex)
 
-const store = new Vuex.Store({
+const store = new vuex.Store({
     modules: {
         main
     }
