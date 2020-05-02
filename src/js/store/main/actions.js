@@ -13,10 +13,10 @@ const actions = {
 
     // connection success
     promise.done(data => {
-      const initServerUnixtime = data.st * 1000
+      const initServerUnixTime = data.st * 1000
       const payload = {
         initDeviceUnixTime,
-        initServerUnixtime
+        initServerUnixTime
       }
       commit('loadServerTime', payload)
     })
@@ -24,10 +24,10 @@ const actions = {
     // connection failed
     promise.fail(error => {
       const nd = new Date()
-      const initServerUnixtime = nd.getTime()
+      const initServerUnixTime = nd.getTime()
       const payload = {
         initDeviceUnixTime,
-        initServerUnixtime
+        initServerUnixTime
       }
       commit('loadServerTime', payload)
     })

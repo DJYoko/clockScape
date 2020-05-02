@@ -17,7 +17,7 @@
       </div>
       <div class="c-blackBox">
         <clocks
-          :unixtime="currentUnixtime"
+          :unixtime="currentUnixTime"
           :region="region"
           class="text-center"
         ></clocks>
@@ -52,7 +52,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('main', ["region", "currentUnixtime"]),
+    ...mapState('main', ["region", "currentUnixTime"]),
     contentWrapperClass() {
       return {
         hideOnMobile: this.hideOnMobile
@@ -60,13 +60,13 @@ export default {
     },
     photoLink() {
       const region = this.region || CONSTANTS.DEFAULT_REGION;
-      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const localTime = functions.getLocalTime(region, this.currentUnixTime);
       const dayOrNight = functions.getDayOrNight(localTime);
       return CONSTANTS.REGIONS[region].photoLink[dayOrNight];
     },
     viewStyle() {
       const region = this.region ||CONSTANTS.DEFAULT_REGION;
-      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const localTime = functions.getLocalTime(region, this.currentUnixTime);
       const dayOrNight = functions.getDayOrNight(localTime);
       const style = {
         backgroundImage: `url(./img/background/${dayOrNight}/${region}.jpg)`
@@ -106,7 +106,7 @@ export default {
       this.hideOnMobile = !this.hideOnMobile;
     },
     getBackgroundImagePath(region) {
-      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const localTime = functions.getLocalTime(region, this.currentUnixTime);
       const dayOrNight =
         localTime.getHours() < 6 || 18 < localTime.getHours() ? "night" : "day";
       return `./img/background/${dayOrNight}/${region}.jpg`;
