@@ -11,7 +11,7 @@ const actions = {
       method: 'GET'
     })
 
-    // conection success
+    // connection success
     promise.done(data => {
       const initServerUnixtime = data.st * 1000
       const payload = {
