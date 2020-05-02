@@ -38,8 +38,8 @@ const actions = {
     })
 
   },
-  updateTime ({ commit }) {
-    commit('updateTime')
+  updateTime ({ commit }, payload) {
+    commit('updateTime', payload)
   },
   selectRegion ({ commit }, payload) {
     commit('selectRegion', payload)

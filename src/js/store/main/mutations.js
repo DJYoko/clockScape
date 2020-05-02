@@ -3,10 +3,8 @@ const mutations =  {
     state.initServerUnixTime = payload.initServerUnixTime
     state.initDeviceUnixTime = payload.initDeviceUnixTime
   },
-  updateTime: state => {
-    const _nd = new Date()
-    state.currentUnixTime =
-      _nd.getTime() - state.initDeviceUnixTime + state.initServerUnixTime
+  updateTime: (state, payload) => {
+    state.currentUnixTime = payload.currentUnixTime
   },
   selectRegion: (state, payload) => {
     state.region = payload.region

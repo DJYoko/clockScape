@@ -52,7 +52,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('main', ["region", "currentUnixTime"]),
+    ...mapState('main', ["region", "currentUnixTime", "initDeviceUnixTime", "initServerUnixTime"]),
     contentWrapperClass() {
       return {
         hideOnMobile: this.hideOnMobile
@@ -78,7 +78,12 @@ export default {
     const payload = {};
     payload.callback = () => {
       setInterval(() => {
-        this.$store.dispatch("main/updateTime");
+        const _nd = new Date()
+        const payload = {
+          currentUnixTime:  _nd.getTime() - this.initDeviceUnixTime + this.initServerUnixTime
+
+        }
+        this.$store.dispatch("main/updateTime", payload);
       }, 1000);
     };
     this.$store.dispatch("main/loadServerTime", payload);
