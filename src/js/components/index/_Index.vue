@@ -17,7 +17,7 @@
       </div>
       <div class="c-blackBox">
         <clocks
-          :unixtime="currentUnixtime"
+          :unixtime="currentUnixTime"
           :region="region"
           class="text-center"
         ></clocks>
@@ -52,21 +52,21 @@ export default {
     };
   },
   computed: {
-    ...mapState(["region", "currentUnixtime"]),
+    ...mapState('main', ["region", "currentUnixTime", "initDeviceUnixTime", "initServerUnixTime"]),
     contentWrapperClass() {
       return {
         hideOnMobile: this.hideOnMobile
       };
     },
     photoLink() {
-      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION];
-      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const region = this.region || CONSTANTS.DEFAULT_REGION;
+      const localTime = functions.getLocalTime(region, this.currentUnixTime);
       const dayOrNight = functions.getDayOrNight(localTime);
       return CONSTANTS.REGIONS[region].photoLink[dayOrNight];
     },
     viewStyle() {
-      const region = this.region || CONSTANTS.REGIONS[CONSTANTS.DEFAULT_REGION];
-      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const region = this.region ||CONSTANTS.DEFAULT_REGION;
+      const localTime = functions.getLocalTime(region, this.currentUnixTime);
       const dayOrNight = functions.getDayOrNight(localTime);
       const style = {
         backgroundImage: `url(./img/background/${dayOrNight}/${region}.jpg)`
@@ -78,10 +78,15 @@ export default {
     const payload = {};
     payload.callback = () => {
       setInterval(() => {
-        this.$store.dispatch("updateTime");
+        const _nd = new Date()
+        const payload = {
+          currentUnixTime:  _nd.getTime() - this.initDeviceUnixTime + this.initServerUnixTime
+
+        }
+        this.$store.dispatch("main/updateTime", payload);
       }, 1000);
     };
-    this.$store.dispatch("loadServerTime", payload);
+    this.$store.dispatch("main/loadServerTime", payload);
   },
   watch: {
     $route: {
@@ -96,7 +101,7 @@ export default {
         ) {
           payload.region = currentRegion;
         }
-        this.$store.dispatch("selectRegion", payload);
+        this.$store.dispatch("main/selectRegion", payload);
       },
       immediate: true
     }
@@ -106,7 +111,7 @@ export default {
       this.hideOnMobile = !this.hideOnMobile;
     },
     getBackgroundImagePath(region) {
-      const localTime = functions.getLocalTime(region, this.currentUnixtime);
+      const localTime = functions.getLocalTime(region, this.currentUnixTime);
       const dayOrNight =
         localTime.getHours() < 6 || 18 < localTime.getHours() ? "night" : "day";
       return `./img/background/${dayOrNight}/${region}.jpg`;

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import 'babel-polyfill'
 import Router from 'vue-router'
-import store from './store/'
+import store from './store'
 import router from './router'
 
 window.addEventListener(
