@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import CONSTANTS from "@js/utils/constants";
+import constants from "@js/utils/constants";
 export default {
   name: "regionPointer",
   props: {
@@ -20,12 +20,12 @@ export default {
   },
   computed: {
     latlng() {
-      return CONSTANTS.REGIONS[this.region].latlng; //second
+      return constants.REGIONS[this.region].latlng; //second
     },
     pointerStyle() {
       return {
-        top: CONSTANTS.REGIONS[this.region].position[0] + "%",
-        left: CONSTANTS.REGIONS[this.region].position[1] + "%"
+        top: constants.REGIONS[this.region].position[0] + "%",
+        left: constants.REGIONS[this.region].position[1] + "%"
       };
     }
   }

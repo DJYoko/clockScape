@@ -1,9 +1,9 @@
-import CONSTANTS from '@js/utils/constants'
+import constants from '@js/utils/constants'
 
 const mutations =  {
   loadServerTime: (state, payload) => {
     const promise = $.ajax({
-      url: CONSTANTS.TIME_API_URL,
+      url: constants.TIME_API_URL,
       method: 'GET'
     })
 

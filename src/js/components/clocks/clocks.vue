@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import CONSTANTS from "@js/utils/constants";
+import constants from "@js/utils/constants";
 import functions from "@js/utils/functions";
 import analogClock from "@js/components/analogClock/";
 import digitalClock from "@js/components/digitalClock/";
