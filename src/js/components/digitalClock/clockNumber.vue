@@ -4,21 +4,21 @@
 
 <script>
 export default {
-  name: "clockNumber",
+  name: 'clockNumber',
   props: {
     value: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     numberStyle() {
       const style = {
-        backgroundPosition: this.value * 10 + "%" + " 50%"
+        backgroundPosition: this.value * 10 + '%' + ' 50%',
       };
       return style;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -26,7 +26,7 @@ export default {
 div {
   width: 16px;
   height: 25px;
-  background-image: url("img/digital_number.png");
+  // background-image: url("img/digital_number.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
 }
