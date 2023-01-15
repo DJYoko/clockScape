@@ -1,5 +1,5 @@
 <template>
-  <div :style="numberStyle"></div>
+  <div class="clockNumber" :style="numberStyle"></div>
 </template>
 
 <script>
@@ -21,13 +21,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-div {
-  width: 16px;
-  height: 25px;
-  // background-image: url("img/digital_number.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-}
-</style>
