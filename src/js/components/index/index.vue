@@ -5,7 +5,7 @@
         <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#infoModal"></span>
       </p>
       <div class="c-blackBox" @click.stop.prevent>
-        <region-selector :region="region" @change="onRegionChange" @click.stop.prevent></region-selector>
+        <region-selector :region="region" @evtChange="onRegionChange" @click.stop.prevent></region-selector>
       </div>
       <div class="c-blackBox">
         <clocks :unixtime="currentUnixTime" :region="region" class="text-center"></clocks>
@@ -62,19 +62,18 @@ export default {
       };
       return style;
     },
+    timeLagBetweenLocalAndServer() {
+      return this.initDeviceUnixTime + this.initServerUnixTime;
+    },
   },
   created() {
-    const payload = {};
-    payload.callback = () => {
-      setInterval(() => {
-        const _nd = new Date();
-        const payload = {
-          currentUnixTime: _nd.getTime() - this.initDeviceUnixTime + this.initServerUnixTime,
-        };
-        this.$store.dispatch('main/updateTime', payload);
-      }, 1000);
-    };
-    this.$store.dispatch('main/loadServerTime', payload);
+    setInterval(() => {
+      const _nd = new Date();
+      const payload = {
+        currentUnixTime: _nd.getTime(),
+      };
+      this.$store.dispatch('main/updateTime', payload);
+    }, 1000);
   },
   watch: {
     $route: {
@@ -100,11 +99,12 @@ export default {
       const dayOrNight = localTime.getHours() < 6 || 18 < localTime.getHours() ? 'night' : 'day';
       return `./img/background/${dayOrNight}/${region}.jpg`;
     },
-    onRegionChange(payload) {
+    onRegionChange({ region }) {
+      console.log({ region });
       this.$router.push({
         path: '/',
         query: {
-          region: payload.region,
+          region,
         },
       });
     },

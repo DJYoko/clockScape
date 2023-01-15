@@ -1,5 +1,5 @@
 <template>
-  <select class="regionSelector" name="region" v-model="selectedRegion" @change="onChange">
+  <select class="regionSelector" name="region" v-model="selectedRegion" @change="evtChange">
     <option value="-1" disabled>select Region</option>
     <option v-for="(region, index) in regions" :key="index" :value="index">{{ region.label }}</option>
   </select>
@@ -25,11 +25,10 @@ export default {
     this.selectedRegion = this.region;
   },
   methods: {
-    onChange(e) {
-      const payload = {
+    evtChange() {
+      this.$emit('evtChange', {
         region: this.selectedRegion,
-      };
-      this.$emit('change', payload);
+      });
     },
   },
 };
