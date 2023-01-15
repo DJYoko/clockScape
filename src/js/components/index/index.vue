@@ -100,9 +100,8 @@ export default {
       return `./img/background/${dayOrNight}/${region}.jpg`;
     },
     onRegionChange({ region }) {
-      console.log({ region });
       this.$router.push({
-        path: '/',
+        path: this.$route.path,
         query: {
           region,
         },
