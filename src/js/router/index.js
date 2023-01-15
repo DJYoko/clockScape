@@ -1,24 +1,25 @@
-import Index from '@js/components//index'
-import Router from 'vue-router'
-import constants from '@js/utils/constants'
+import index from '@js/components/index';
+import { createRouter, createWebHistory } from 'vue-router';
+import constants from '@js/utils/constants';
 
-const baseUri = window.location.pathname.replace(/\?.*/g, '').replace(/index\.html/g,'')
+const baseUri = window.location.pathname.replace(/\?.*/g, '').replace(/index\.html/g, '');
 
-const router = new Router({
+const router = createRouter({
   mode: 'history',
   base: baseUri,
-  routes:[
+  history: createWebHistory('/'),
+  routes: [
     {
       path: '/',
       name: 'index',
-      component: Index,
-      alias: constants.WEB_ROOT + 'index.html'
+      component: index,
+      alias: constants.WEB_ROOT + 'index.html',
     },
     {
       path: '/index.html',
-      component: Index
-    }
-  ]
-})
+      component: index,
+    },
+  ],
+});
 
-export default router
+export default router;

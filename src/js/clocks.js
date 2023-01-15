@@ -1,18 +1,14 @@
-import Vue from 'vue'
-import 'babel-polyfill'
-import Router from 'vue-router'
-import store from './store'
-import router from './router'
+import { createApp } from 'vue';
+import store from './store';
+import router from './router';
 
 window.addEventListener(
   'DOMContentLoaded',
-  function() {
-    Vue.use(Router)
-
-    new Vue({
-      router,
-      store
-    }).$mount('#wrapper')
+  function () {
+    const app = createApp({});
+    app.use(store);
+    app.use(router);
+    app.mount('#wrapper');
   },
   false
-)
+);

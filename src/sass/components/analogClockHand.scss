@@ -1,0 +1,19 @@
+.analogClockHand {
+  position: absolute;
+  width: 2px;
+  height: 45%;
+  left: 50%;
+  top: 5%;
+  background: #fff;
+  transform-origin: bottom;
+  &.hour {
+    height: 30%;
+    top: 20%;
+  }
+
+  &.second {
+    width: 1px;
+    height: 40%;
+    top: 10%;
+  }
+}

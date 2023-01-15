@@ -1,99 +1,96 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>clockScape</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/common.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>    <![endif]-->
-    
+      <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
     <!--for PWA iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="clockScape">
-    <link rel="apple-touch-icon" href="img/icons/icon-152x152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="clockScape" />
+    <link rel="apple-touch-icon" href="img/icons/icon-152x152.png" />
 
     <!-- for PWA Android-->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" />
     <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-        .then((reg) => {
-            console.log('Service worker registered.', reg);
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then((reg) => {
+          console.log('Service worker registered.', reg);
         });
-    }
+      }
     </script>
-</head>
+  </head>
 
-<body>
-<div id="wrapper">
-    <!-- access URL: /bitbucket/clocks/dst/-->
-    <router-view></router-view>
-</div>
-<div id="infoModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title">info</h3>
-            </div>
-            <div class="modal-body">
-                <h4>web framework &amp; libraries</h4>
-                <ul style="padding-left:20px;">
-                    <li>Vue <a href="https://vuejs.org/" target="_blank">https://vuejs.org/</a></li>
-                    <li>Vuex <a href="https://vuex.vuejs.org/" target="_blank">https://vuex.vuejs.org/</a></li>
-                    <li>Bootstrap: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a></li>
-                </ul>
-                <hr>
-				<h4>global timezone info &amp; API</h4>
-                <ul style="padding-left:20px;">
-                    <li>timezone &amp; offset list<a href="https://www.epochconverter.com/timezones" target="_blank">https://www.epochconverter.com/timezones</a></li>
-					<li>NICT (use as Japanese standard timezone API) <a href="https://www.nict.go.jp/" target="_blank">https://www.nict.go.jp/</a></li>
-                </ul>
-				<hr>
-				<h4>visual materials</h4>
-                <ul style="padding-left:20px;">
-                    <li>photos: <a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
-                    <li>world map: <a href="https://freevectormaps.com/world-maps/WRLD-EPS-02-4001" target="_blank">https://freevectormaps.com/world-maps/WRLD-EPS-02-4001</a></li>
-                </ul>
-                <hr>
-                <h4>source</h4>
-                <ul style="padding-left:20px;">
-                    <li>GitHub <a href="https://github.com/DJYoko/clockScape" target="_blank">https://github.com/DJYoko/clockScape</a></li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
+  <body>
+    <div id="wrapper">
+      <!-- access URL: /bitbucket/clocks/dst/-->
+      <router-view></router-view>
     </div>
-</div>
-</body>
-<script src="./js/clocks.js"></script>
-<style>
+    <div id="infoModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title">info</h3>
+          </div>
+          <div class="modal-body">
+            <h4>web framework &amp; libraries</h4>
+            <ul style="padding-left: 20px">
+              <li>Vue <a href="https://vuejs.org/" target="_blank">https://vuejs.org/</a></li>
+              <li>Vuex <a href="https://vuex.vuejs.org/" target="_blank">https://vuex.vuejs.org/</a></li>
+              <li>Bootstrap: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a></li>
+            </ul>
+            <hr />
+            <h4>global timezone info &amp; API</h4>
+            <ul style="padding-left: 20px">
+              <li>timezone &amp; offset list<a href="https://www.epochconverter.com/timezones" target="_blank">https://www.epochconverter.com/timezones</a></li>
+              <li>NICT (use as Japanese standard timezone API) <a href="https://www.nict.go.jp/" target="_blank">https://www.nict.go.jp/</a></li>
+            </ul>
+            <hr />
+            <h4>visual materials</h4>
+            <ul style="padding-left: 20px">
+              <li>photos: <a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+              <li>world map: <a href="https://freevectormaps.com/world-maps/WRLD-EPS-02-4001" target="_blank">https://freevectormaps.com/world-maps/WRLD-EPS-02-4001</a></li>
+            </ul>
+            <hr />
+            <h4>source</h4>
+            <ul style="padding-left: 20px">
+              <li>GitHub <a href="https://github.com/DJYoko/clockScape" target="_blank">https://github.com/DJYoko/clockScape</a></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/clocks.js"></script>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
     html,
     body,
     #wrapper {
-        height: 100%;
+      height: 100%;
     }
 
     #infoModal {
-        word-wrap: break-word;
+      word-wrap: break-word;
     }
-</style>
-
+  </style>
 </html>

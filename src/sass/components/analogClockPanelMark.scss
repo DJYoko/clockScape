@@ -1,0 +1,13 @@
+.analogClockPanelMark {
+  width: 100%;
+  height: 1px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  &.bold {
+    border-width: 8px;
+  }
+}
