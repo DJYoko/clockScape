@@ -15,11 +15,10 @@ mix.webpackConfig({
   },
 });
 
-// 全画面共用スクリプト（現状は特に要望がないのでビルドしない）
 const cssDirectory = 'docs/css';
 mix
   .setPublicPath('docs')
-  // .sass('src/sass/common.scss', cssDirectory)
+  .sass('src/sass/common.scss', cssDirectory)
 
   .version();
 
